@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VYNA — Bespoke timber windows and doors, made to measure in Spain</title>
+<meta name="description" content="VYNA makes windows, doors and sliding walls in solid timber, built to your measurements and your design. Scandinavian craftsmanship for homes throughout Spain, from our base on the Costa del Sol.">
+<link rel="canonical" href="https://vyna.es/">
+<link rel="alternate" hreflang="en" href="https://vyna.es/">
+<link rel="alternate" hreflang="es" href="https://vyna.es/es/">
+<link rel="alternate" hreflang="x-default" href="https://vyna.es/">
+<meta property="og:site_name" content="VYNA">
+<meta property="og:title" content="VYNA — window solutions">
+<meta property="og:description" content="Windows, doors and sliding walls in solid timber, made to your measurements. Scandinavian craftsmanship, delivered in Spain.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vyna.es/">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://vyna.es/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#22221F">
+
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════════════════
+   VYNA — vyna.es
+   Tokens taken from assets/vyna-tokens.css and inlined so the
+   page renders standalone. Edit both if you change the brand.
+   ══════════════════════════════════════════════════════════ */
+:root{
+  --vyna-kol:#22221F; --vyna-sand:#F1EFE8; --vyna-kalk:#FAF8F4;
+  --vyna-sten:#5F5E5A; --vyna-dis:#B4B2A9;
+  --vyna-ek:#7A5A2E;  --vyna-ek-ljus:#C99B5E;
+
+  --bg:var(--vyna-kalk); --bg-alt:var(--vyna-sand); --bg-invers:var(--vyna-kol);
+  --text:var(--vyna-kol); --text-sekundar:var(--vyna-sten); --text-invers:var(--vyna-sand);
+  --linje:var(--vyna-dis); --accent:var(--vyna-ek); --accent-invers:var(--vyna-ek-ljus);
+
+  --font-rubrik:"Cormorant Garamond","Cambria",Georgia,serif;
+  --font-text:"Jost","Century Gothic","Helvetica Neue",Arial,sans-serif;
+
+  --sparr-rubrik:.06em; --sparr-etikett:.24em;
+  --steg-xs:.75rem; --steg-s:.875rem; --steg-m:1rem;
+  --steg-l:1.375rem; --steg-xl:2.25rem; --steg-2xl:3.5rem;
+
+  --rum-1:.5rem; --rum-2:1rem; --rum-3:1.5rem;
+  --rum-4:2.5rem; --rum-5:4rem; --rum-6:6rem;
+  --radie:2px; --harlinje:1px solid var(--linje); --maxbredd:1180px;
+
+  --gut:clamp(1.25rem,5vw,2.5rem);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+@media (max-width:720px){
+  :root{ --steg-2xl:2.25rem; --steg-xl:1.625rem; --rum-6:3.5rem; --rum-4:1.5rem; }
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);
+  font-size:var(--steg-m);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--font-rubrik);font-weight:300;letter-spacing:var(--sparr-rubrik);
+  line-height:1.15;margin:0 0 var(--rum-3)}
+h1{font-size:var(--steg-2xl)} h2{font-size:var(--steg-xl)} h3{font-size:var(--steg-l)}
+p{margin:0 0 var(--rum-3);max-width:68ch} p:last-child{margin-bottom:0}
+a{color:var(--accent);text-underline-offset:.25em}
+
+.etikett{font-family:var(--font-text);font-weight:400;font-size:var(--steg-xs);
+  letter-spacing:var(--sparr-etikett);text-transform:uppercase;color:var(--text-sekundar);margin:0 0 var(--rum-2)}
+.ingress{font-size:var(--steg-l);color:var(--text-sekundar);line-height:1.55}
+.stor{font-size:var(--steg-l);line-height:1.5}
+
+.invers{background:var(--bg-invers);color:var(--text-invers)}
+.invers h1,.invers h2,.invers h3{color:var(--text-invers)}
+.invers .etikett,.invers .ingress,.invers figcaption{color:var(--vyna-dis)}
+.invers a{color:var(--accent-invers)}
+.invers .avdelare{border-color:rgba(180,178,169,.34)}
+
+.sektion{padding:var(--rum-6) var(--gut)}
+.sektion--tat{padding-block:var(--rum-5)}
+.omslag{max-width:var(--maxbredd);margin-inline:auto}
+.avdelare{border:0;border-top:var(--harlinje);margin:var(--rum-5) 0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.invers :focus-visible{outline-color:var(--accent-invers)}
+
+/* buttons */
+.knapp{display:inline-block;font-family:var(--font-text);font-weight:400;font-size:var(--steg-xs);
+  letter-spacing:var(--sparr-etikett);text-transform:uppercase;padding:.9rem 2rem;
+  border:1px solid var(--text);border-radius:var(--radie);background:var(--text);color:var(--vyna-kalk);
+  text-decoration:none;transition:background .2s ease,color .2s ease;cursor:pointer}
+.knapp:hover{background:transparent;color:var(--text)}
+.knapp--linje{background:transparent;color:var(--text)}
+.knapp--linje:hover{background:var(--text);color:var(--vyna-kalk)}
+.invers .knapp{background:var(--vyna-sand);color:var(--vyna-kol);border-color:var(--vyna-sand)}
+.invers .knapp:hover{background:transparent;color:var(--vyna-sand)}
+.invers .knapp--linje{background:transparent;color:var(--vyna-sand)}
+.invers .knapp--linje:hover{background:var(--vyna-sand);color:var(--vyna-kol)}
+.knappar{display:flex;flex-wrap:wrap;gap:var(--rum-2);margin-top:var(--rum-4)}
+
+/* header */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+  gap:var(--rum-3);padding:1rem var(--gut);color:var(--vyna-sand);border-bottom:1px solid transparent;
+  transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease),padding .4s var(--ease)}
+.hdr.solid{background:var(--vyna-kalk);color:var(--vyna-kol);border-bottom-color:var(--linje);padding-block:.7rem}
+.hdr .logo{display:block;color:inherit}
+.hdr .logo .lockup svg{width:190px;height:auto;fill:currentColor}
+.hdr .logo .marke{display:none;width:48px;fill:currentColor}
+@media (max-width:760px){ .hdr .logo .lockup{display:none} .hdr .logo .marke{display:block} }
+
+.nav{display:flex;align-items:center;gap:clamp(1rem,2.2vw,2rem)}
+.nav a{color:inherit;text-decoration:none;font-size:var(--steg-xs);letter-spacing:var(--sparr-etikett);
+  text-transform:uppercase;padding:.4rem 0;position:relative;opacity:.82;white-space:nowrap}
+.nav a:hover,.nav a[aria-current="page"]{opacity:1}
+.nav a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor}
+.hdr-sida{display:flex;align-items:center;gap:var(--rum-1)}
+.ikon{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.3}
+.ikonlank{display:inline-flex;padding:.4rem;color:inherit}
+.ikonlank:hover{opacity:.7}
+.sprak{color:inherit;text-decoration:none;font-size:var(--steg-xs);letter-spacing:var(--sparr-etikett);
+  padding:.4rem .5rem;opacity:.82;border:1px solid currentColor;border-radius:var(--radie);line-height:1}
+.sprak:hover{opacity:1}
+.burger{display:none;background:none;border:0;padding:.5rem;color:inherit;cursor:pointer}
+.burger span{display:block;width:22px;height:1px;background:currentColor;margin:6px 0;
+  transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:1080px){
+  .burger{display:block}
+  .nav{position:fixed;inset:0;z-index:-1;background:var(--vyna-kol);color:var(--vyna-sand);
+    flex-direction:column;justify-content:center;gap:.25rem;transform:translateY(-100%);
+    transition:transform .45s var(--ease);overflow-y:auto;padding:5rem var(--gut)}
+  .menu-open .nav{transform:translateY(0)}
+  .nav a{font-family:var(--font-rubrik);font-size:1.75rem;text-transform:none;
+    letter-spacing:var(--sparr-rubrik);opacity:1;padding:.35rem 0}
+  .nav a[aria-current="page"]{color:var(--accent-invers)}
+  .nav a[aria-current="page"]::after{display:none}
+}
+
+/* routing */
+.sida{display:none} .sida.aktiv{display:block}
+.sidhuvud{padding-top:calc(var(--rum-6) + 3.5rem);padding-bottom:var(--rum-4)}
+.sidhuvud h1{max-width:18ch}
+
+/* hero */
+.hero{position:relative;min-height:88svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--vyna-kol)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .skugga{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(34,34,31,.5) 0%,rgba(34,34,31,.12) 34%,rgba(34,34,31,.62) 76%,rgba(34,34,31,.86) 100%)}
+.hero .inre{position:relative;z-index:2;max-width:var(--maxbredd);margin-inline:auto;width:100%;
+  padding:0 var(--gut) clamp(3rem,7vw,5.5rem)}
+.hero h1{color:var(--vyna-sand);max-width:17ch}
+.hero p{color:var(--vyna-sand);font-size:var(--steg-l);line-height:1.5;max-width:46ch}
+.hero .knappar .knapp{background:var(--vyna-sand);color:var(--vyna-kol);border-color:var(--vyna-sand)}
+.hero .knappar .knapp:hover{background:transparent;color:var(--vyna-sand)}
+.hero .knappar .knapp--linje{background:transparent;color:var(--vyna-sand);border-color:rgba(241,239,232,.55)}
+.hero .knappar .knapp--linje:hover{background:var(--vyna-sand);color:var(--vyna-kol);border-color:var(--vyna-sand)}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1,.hero p,.hero .knappar{opacity:0;transform:translateY(14px);animation:stig .9s var(--ease) forwards}
+  .hero p{animation-delay:.12s} .hero .knappar{animation-delay:.24s}
+  @keyframes stig{to{opacity:1;transform:none}}
+}
+
+/* images */
+.bild{position:relative;margin:0;overflow:hidden;background:var(--vyna-sand);border-radius:var(--radie)}
+.bild img{width:100%;height:100%;object-fit:cover}
+.r-43{aspect-ratio:4/3} .r-32{aspect-ratio:3/2} .r-45{aspect-ratio:4/5}
+.r-11{aspect-ratio:1/1} .r-169{aspect-ratio:16/9} .r-23{aspect-ratio:2/3}
+figcaption{margin-top:var(--rum-2);font-size:var(--steg-s);color:var(--text-sekundar);line-height:1.55;max-width:52ch}
+
+/* layout */
+.delad{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,5vw,var(--rum-6));align-items:center}
+.delad--topp{align-items:start}
+@media (max-width:860px){.delad{grid-template-columns:1fr}}
+
+.kort-rad{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.25rem,2.6vw,var(--rum-4));margin-top:var(--rum-5)}
+.kort-rad--2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:860px){.kort-rad,.kort-rad--2{grid-template-columns:1fr}}
+.kort{text-decoration:none;color:inherit;display:block}
+.kort h3{margin:var(--rum-3) 0 var(--rum-1)}
+.kort p{font-size:var(--steg-s);color:var(--text-sekundar);max-width:36ch;margin:0}
+.kort .bild img{transition:transform .7s var(--ease)}
+.kort:hover .bild img{transform:scale(1.04)}
+.kort .mer{display:inline-block;margin-top:var(--rum-2);font-size:var(--steg-xs);
+  letter-spacing:var(--sparr-etikett);text-transform:uppercase;color:var(--accent)}
+
+/* numbered sequence */
+.steg-lista{margin-top:var(--rum-5);border-top:var(--harlinje);counter-reset:steg}
+.steg{counter-increment:steg;display:grid;grid-template-columns:3.5rem 1fr 1.15fr;
+  gap:clamp(1rem,3vw,var(--rum-4));padding:var(--rum-3) 0;border-bottom:var(--harlinje);align-items:start}
+.steg::before{content:counter(steg,decimal-leading-zero);font-family:var(--font-rubrik);
+  font-size:var(--steg-l);letter-spacing:.02em;color:var(--accent)}
+.invers .steg-lista,.invers .steg{border-color:rgba(180,178,169,.34)}
+.invers .steg::before{color:var(--accent-invers)}
+.steg h3{margin:0} .steg p{margin:0;font-size:var(--steg-s);color:var(--text-sekundar)}
+.invers .steg p{color:var(--vyna-dis)}
+@media (max-width:760px){.steg{grid-template-columns:2.5rem 1fr}.steg p{grid-column:2}}
+
+/* choices list */
+.val{margin-top:var(--rum-4);border-top:var(--harlinje)}
+.val div{display:grid;grid-template-columns:11rem 1fr;gap:var(--rum-3);
+  padding:.9rem 0;border-bottom:var(--harlinje)}
+.val dt{font-size:var(--steg-xs);letter-spacing:var(--sparr-etikett);text-transform:uppercase;
+  color:var(--text-sekundar);margin:0}
+.val dd{margin:0;font-size:var(--steg-s)}
+@media (max-width:600px){.val div{grid-template-columns:1fr;gap:.2rem}}
+
+/* gallery */
+.galleri{columns:3;column-gap:clamp(.75rem,1.6vw,1.25rem);margin-top:var(--rum-4)}
+.galleri .bild{break-inside:avoid;margin-bottom:clamp(.75rem,1.6vw,1.25rem)}
+@media (max-width:900px){.galleri{columns:2}}
+@media (max-width:560px){.galleri{columns:1}}
+
+/* quote */
+.citat{font-family:var(--font-rubrik);font-weight:300;font-size:var(--steg-xl);line-height:1.25;
+  letter-spacing:var(--sparr-rubrik);max-width:24ch;margin:0}
+
+/* contact */
+.uppgift{padding:var(--rum-3) 0;border-top:var(--harlinje)}
+.uppgift dt{font-size:var(--steg-xs);letter-spacing:var(--sparr-etikett);text-transform:uppercase;
+  color:var(--text-sekundar);margin-bottom:.4rem}
+.uppgift dd{margin:0;font-size:var(--steg-m);line-height:1.6}
+.uppgift dd a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--linje)}
+.uppgift dd a:hover{border-color:var(--accent);color:var(--accent)}
+.formular{display:grid;gap:var(--rum-3);max-width:34rem}
+.falt{display:grid;gap:.4rem}
+.falt label{font-size:var(--steg-xs);letter-spacing:var(--sparr-etikett);text-transform:uppercase;color:var(--text-sekundar)}
+.falt input,.falt select,.falt textarea{font-family:var(--font-text);font-weight:300;font-size:var(--steg-m);
+  color:var(--text);background:var(--vyna-kalk);border:var(--harlinje);border-radius:var(--radie);
+  padding:.75rem .85rem;width:100%;transition:border-color .2s ease}
+.falt textarea{min-height:8rem;resize:vertical}
+.falt input:focus,.falt select:focus,.falt textarea:focus{border-color:var(--text);outline:none}
+.notis{font-size:var(--steg-s);color:var(--text-sekundar);max-width:46ch}
+.finstilt{font-size:var(--steg-s);color:var(--text-sekundar);max-width:62ch;margin-top:var(--rum-4)}
+.invers .finstilt{color:var(--vyna-dis)}
+
+/* floating whatsapp */
+.wa{position:fixed;right:clamp(1rem,3vw,1.75rem);bottom:clamp(1rem,3vw,1.75rem);z-index:70;
+  display:inline-flex;align-items:center;gap:.6rem;background:var(--vyna-kol);color:var(--vyna-sand);
+  text-decoration:none;padding:.8rem 1.35rem .8rem 1.05rem;border-radius:var(--radie);border:1px solid var(--vyna-kol);
+  font-size:var(--steg-xs);letter-spacing:var(--sparr-etikett);text-transform:uppercase;
+  box-shadow:0 6px 22px rgba(34,34,31,.22);transition:background .2s ease,color .2s ease}
+.wa:hover{background:var(--vyna-sand);color:var(--vyna-kol)}
+.wa svg{width:18px;height:18px;fill:currentColor}
+@media (max-width:520px){.wa span{display:none}.wa{padding:.85rem}}
+
+/* footer */
+.fot{background:var(--bg-invers);color:var(--text-invers);padding:var(--rum-6) var(--gut) var(--rum-4)}
+.fot .logo svg{width:190px;height:auto;fill:currentColor}
+.fot-rader{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:clamp(1.5rem,4vw,var(--rum-5));margin-top:var(--rum-4)}
+@media (max-width:900px){.fot-rader{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.fot-rader{grid-template-columns:1fr}}
+.fot h4{font-family:var(--font-text);font-weight:400;font-size:var(--steg-xs);letter-spacing:var(--sparr-etikett);
+  text-transform:uppercase;color:var(--vyna-dis);margin:0 0 var(--rum-2)}
+.fot ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;font-size:var(--steg-s)}
+.fot a{color:var(--vyna-sand);text-decoration:none}
+.fot a:hover{color:var(--accent-invers)}
+.fot address{font-style:normal;font-size:var(--steg-s);line-height:1.75}
+.fot p{color:var(--vyna-dis);font-size:var(--steg-s)}
+.fot-slut{margin-top:var(--rum-5);padding-top:var(--rum-3);border-top:1px solid rgba(180,178,169,.34);
+  display:flex;flex-wrap:wrap;gap:.75rem var(--rum-4);justify-content:space-between;
+  font-size:var(--steg-xs);color:var(--vyna-dis)}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <a class="logo" href="#/" aria-label="VYNA — window solutions, home">
+    <span class="lockup"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 604 172" role="img" aria-label="VYNA — window solutions" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTozYTBkYjY2NC1kMTFkLTRlMWMtOTBjNy1lNmMwZTA4NDMwMTYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaK3YQ9hS30MkUj+bEYh+rsEAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoxNGIwMjJkNS1iMTliLTRiZWEtOGYwZS0xMzUwZDVlYmM5MTdscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNosfpsBaeM0jB2JjvmCQwsrAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggc329RRmWVy+fIroNQfpHUmKnJsJ9lng98ZVOSqcrfpikZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaCBKfak95J1TkeqYQeN5M6gAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCDxTRFlKdDQAh9KZ8ZyCqsH61CHOOdOa5LxXW2DhOr+E2RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjIZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjNhMGRiNjY0LWQxMWQtNGUxYy05MGM3LWU2YzBlMDg0MzAxNi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjJiZjE3MzY3LTU0ZGMtNGYyMi1iZTA3LTFiNWVmOTlmMTEzOHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBzfb1FGZZXL58iug1B+kdSYqcmwn2WeD3xlU5Kpyt+mKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggHJnx7poHVdigbwnX3YmD8PU1qtuSsteqCBLZdWC8mHGiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgguael5cGdz6lWAfSQAr0Js8vNhj8EXGtMp7KVHElRktp0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQH39iNGcMYRJgV6aW8daHLuVD0OfoZcB4OdKd2kKCzuXurIX8C1DuQaA9MaibMGtdzJ9EANvd/5jJsirr8G9yso=</c2pa:manifest></metadata><g fill="currentColor"><path d="M34.00,34.00 L138.00,34.00 L138.00,35.25 L34.00,35.25 Z"/><path d="M34.00,136.75 L138.00,136.75 L138.00,138.00 L34.00,138.00 Z"/><path d="M136.75,34.00 L138.00,34.00 L138.00,138.00 L136.75,138.00 Z"/><path d="M115.787264 57.919999999999995Q116.05683200000001 57.919999999999995 116.05683200000001 58.459135999999994Q116.05683200000001 58.99827199999999 115.787264 58.99827199999999Q112.642304 58.99827199999999 109.946624 61.42438399999999Q107.250944 63.85049599999999 105.54368 68.43315199999999L88.02176 113.990144Q87.931904 114.349568 87.078272 114.349568Q86.22464 114.349568 86.044928 113.990144L63.31136 65.37804799999999Q61.783808 62.143232 60.166399999999996 60.570752Q58.548992 58.99827199999999 56.212736 58.99827199999999Q55.943168 58.99827199999999 55.943168 58.459135999999994Q55.943168 57.919999999999995 56.212736 57.919999999999995Q57.380864 57.919999999999995 58.14464 58.009856Q58.908416 58.099712 60.031616 58.144639999999995Q61.154816 58.189567999999994 63.041792 58.189567999999994Q67.35488000000001 58.189567999999994 70.095488 58.144639999999995Q72.836096 58.099712 74.678144 58.009856Q76.52019200000001 57.919999999999995 77.957888 57.919999999999995Q78.227456 57.919999999999995 78.227456 58.459135999999994Q78.227456 58.99827199999999 77.957888 58.99827199999999Q74.183936 58.99827199999999 72.881024 60.88524799999999Q71.578112 62.772223999999994 73.285376 66.276608L90.627584 103.836416L86.943488 110.03648L103.117568 68.07372799999999Q104.64512 64.03020799999999 103.29728 61.51423999999999Q101.94944000000001 58.99827199999999 97.366784 58.99827199999999Q97.097216 58.99827199999999 97.097216 58.459135999999994Q97.097216 57.919999999999995 97.366784 57.919999999999995Q99.79289600000001 57.919999999999995 102.03929600000001 58.054784Q104.285696 58.189567999999994 107.879936 58.189567999999994Q110.395904 58.189567999999994 111.968384 58.054784Q113.540864 57.919999999999995 115.787264 57.919999999999995Z"/><path d="M251.44 33.5Q251.7664 33.5 251.7664 34.1528Q251.7664 34.8056 251.44 34.8056Q248.0672 34.8056 245.5104 36.22Q242.9536 37.63440000000001 240.9952 42.3128L217.0592 101.3912Q216.9504 101.8264 215.91680000000002 101.8264Q214.88320000000002 101.8264 214.6656 101.3912L187.792 42.5304Q185.94240000000002 38.287200000000006 183.8752 36.546400000000006Q181.80800000000002 34.8056 178.3264 34.8056Q178.0 34.8056 178.0 34.1528Q178.0 33.5 178.3264 33.5Q179.8496 33.5 181.42720000000003 33.6088Q183.00480000000002 33.717600000000004 184.5824 33.772000000000006Q186.16000000000003 33.82640000000001 187.57440000000003 33.82640000000001Q190.18560000000002 33.82640000000001 192.3616 33.772000000000006Q194.5376 33.717600000000004 196.33280000000002 33.6088Q198.12800000000001 33.5 199.76000000000002 33.5Q200.0864 33.5 200.0864 34.1528Q200.0864 34.8056 199.76000000000002 34.8056Q195.62560000000002 34.8056 193.8848 36.1656Q192.144 37.525600000000004 193.99360000000001 41.442400000000006L218.3648 95.2984L215.4272 99.324L238.7104 41.660000000000004Q240.23360000000002 37.852000000000004 238.60160000000002 36.3288Q236.9696 34.8056 230.8768 34.8056Q230.55040000000002 34.8056 230.55040000000002 34.1528Q230.55040000000002 33.5 230.8768 33.5Q233.37920000000003 33.5 235.71840000000003 33.6632Q238.0576 33.82640000000001 241.7568 33.82640000000001Q244.912 33.82640000000001 246.81600000000003 33.6632Q248.72000000000003 33.5 251.44 33.5Z"/><path d="M316.0672 69.94800000000001 333.04 44.2712Q336.0864 39.484 335.216 37.144800000000004Q334.3456 34.8056 329.5584 34.8056Q329.3408 34.8056 329.3408 34.1528Q329.3408 33.5 329.5584 33.5Q332.3872 33.5 334.9984 33.6632Q337.6096 33.82640000000001 341.744 33.82640000000001Q344.464 33.82640000000001 346.1504 33.6632Q347.8368 33.5 350.23040000000003 33.5Q350.448 33.5 350.448 34.1528Q350.448 34.8056 350.23040000000003 34.8056Q347.5104 34.8056 344.8992 35.948Q342.288 37.0904 339.9488 39.266400000000004Q337.6096 41.442400000000006 335.5424 44.5976L317.808 71.47120000000001ZM316.176 72.0152 295.8304 42.5304Q293.0016 38.287200000000006 290.2816 36.546400000000006Q287.5616 34.8056 283.536 34.8056Q283.2096 34.8056 283.2096 34.1528Q283.2096 33.5 283.536 33.5Q285.3856 33.5 287.5072 33.6632Q289.6288 33.82640000000001 291.4784 33.82640000000001Q294.416 33.82640000000001 296.9728 33.772000000000006Q299.5296 33.717600000000004 301.8144 33.6088Q304.0992 33.5 305.9488 33.5Q306.1664 33.5 306.1664 34.1528Q306.1664 34.8056 305.9488 34.8056Q301.488 34.8056 300.2912 35.784800000000004Q299.0944 36.76400000000001 300.8352 39.1576L320.2016 67.0104ZM314.4352 67.77199999999999 320.2016 66.7928V92.6872Q320.2016 95.8424 320.8544 97.4744Q321.5072 99.1064 323.57439999999997 99.65039999999999Q325.6416 100.1944 329.776 100.1944Q330.1024 100.1944 330.1024 100.8472Q330.1024 101.5 329.776 101.5Q327.2736 101.5 324.1184 101.3912Q320.96320000000003 101.2824 317.264 101.2824Q313.6736 101.2824 310.4096 101.3912Q307.1456 101.5 304.6432 101.5Q304.3168 101.5 304.3168 100.8472Q304.3168 100.1944 304.6432 100.1944Q308.7776 100.1944 310.8992 99.65039999999999Q313.0208 99.1064 313.728 97.4744Q314.4352 95.8424 314.4352 92.6872Z"/><path d="M395.2736 90.1848V36.00240000000001L397.6672 36.22V90.1848Q397.6672 95.7336 399.5168 97.964Q401.3664 100.1944 405.93600000000004 100.1944Q406.2624 100.1944 406.2624 100.8472Q406.2624 101.5 405.93600000000004 101.5Q403.8688 101.5 401.63840000000005 101.3912Q399.408 101.2824 396.688 101.2824Q394.0768 101.2824 391.6832 101.3912Q389.2896 101.5 387.1136 101.5Q386.896 101.5 386.896 100.8472Q386.896 100.1944 387.1136 100.1944Q391.9008 100.1944 393.5872 97.964Q395.2736 95.7336 395.2736 90.1848ZM450.0 102.6968Q450.0 102.9144 449.456 102.9688Q448.91200000000003 103.0232 448.6944 102.9144L399.5168 42.421600000000005Q395.8176 37.960800000000006 392.9344 36.3832Q390.0512 34.8056 387.44 34.8056Q387.1136 34.8056 387.1136 34.1528Q387.1136 33.5 387.44 33.5Q389.2896 33.5 391.24800000000005 33.6088Q393.20640000000003 33.717600000000004 394.7296 33.717600000000004Q396.2528 33.717600000000004 397.6128 33.6088Q398.9728 33.5 399.6256 33.5Q401.04 33.5 401.584 34.751200000000004Q402.128 36.00240000000001 404.6304 39.1576L449.1296 94.428ZM450.0 44.92400000000001V102.6968L447.6064 99.324V44.92400000000001Q447.6064 39.37520000000001 445.8656 37.0904Q444.1248 34.8056 439.5552 34.8056Q439.3376 34.8056 439.3376 34.1528Q439.3376 33.5 439.5552 33.5Q441.7312 33.5 443.9616 33.6632Q446.192 33.82640000000001 448.91200000000003 33.82640000000001Q451.4144 33.82640000000001 453.91679999999997 33.6632Q456.4192 33.5 458.4864 33.5Q458.81280000000004 33.5 458.81280000000004 34.1528Q458.81280000000004 34.8056 458.4864 34.8056Q453.808 34.8056 451.904 37.0904Q450.0 39.37520000000001 450.0 44.92400000000001Z"/><path d="M515.7152 70.2744 516.6944 68.316H544.8736L545.6351999999999 70.2744ZM569.4624 100.1944Q569.8976 100.1944 569.8976 100.8472Q569.8976 101.5 569.4624 101.5Q566.4159999999999 101.5 563.2064 101.2824Q559.9968 101.0648 557.0592 101.0648Q553.6863999999999 101.0648 551.2384 101.2824Q548.7904 101.5 545.8528 101.5Q545.4176 101.5 545.4176 100.8472Q545.4176 100.1944 545.8528 100.1944Q551.9456 100.1944 553.5232 98.5624Q555.1007999999999 96.9304 553.0336 92.3608L528.4448 39.484L530.512 37.63440000000001L509.5136 88.1176Q506.79359999999997 94.7544 509.0784 97.4744Q511.3632 100.1944 518.7616 100.1944Q519.3056 100.1944 519.3056 100.8472Q519.3056 101.5 518.7616 101.5Q515.4976 101.5 512.7776 101.2824Q510.0576 101.0648 505.9232 101.0648Q502.1152 101.0648 499.776 101.2824Q497.4368 101.5 494.1728 101.5Q493.7376 101.5 493.7376 100.8472Q493.7376 100.1944 494.1728 100.1944Q497.11039999999997 100.1944 499.28639999999996 99.10640000000001Q501.4624 98.0184 503.3664 95.1896Q505.2704 92.3608 507.4464 87.1384L530.1856 32.412000000000006Q530.4032 32.0856 530.8928 32.0856Q531.3824 32.0856 531.4911999999999 32.412000000000006L556.7328 86.59440000000001Q559.2352 92.0344 561.1936000000001 95.0264Q563.152 98.0184 565.1104 99.10640000000001Q567.0688 100.1944 569.4624 100.1944Z"/></g><g fill="none" stroke="#22221F" stroke-width="1.33" stroke-linecap="butt" stroke-linejoin="miter"><path d="M180.00,121.50 L184.42,138.50 L188.84,124.90 L193.26,138.50 L197.68,121.50 M205.24,121.50 L205.24,138.50 M212.79,138.50 L212.79,121.50 L225.03,138.50 L225.03,121.50 M232.59,121.50 L232.59,138.50 M232.59,121.50 L238.37,121.50 M238.37,121.50 C242.45,121.50 244.83,125.24 244.83,130.00 M244.83,130.00 C244.83,134.76 242.45,138.50 238.37,138.50 M238.37,138.50 L232.59,138.50 M260.88,121.50 C265.64,121.50 269.38,125.24 269.38,130.00 M269.38,130.00 C269.38,134.76 265.64,138.50 260.88,138.50 M260.88,138.50 C256.12,138.50 252.38,134.76 252.38,130.00 M252.38,130.00 C252.38,125.24 256.12,121.50 260.88,121.50 M276.94,121.50 L281.36,138.50 L285.78,124.90 L290.20,138.50 L294.62,121.50 M328.77,124.90 C327.75,122.52 326.05,121.50 323.33,121.50 M323.33,121.50 C320.27,121.50 318.23,123.20 318.23,125.92 M318.23,125.92 C318.23,128.30 320.27,129.49 323.33,130.34 M323.33,130.34 C326.73,131.36 328.77,132.38 328.77,134.42 M328.77,134.42 C328.77,137.14 326.39,138.50 323.33,138.50 M323.33,138.50 C320.61,138.50 318.57,137.31 317.89,135.10 M345.16,121.50 C349.92,121.50 353.66,125.24 353.66,130.00 M353.66,130.00 C353.66,134.76 349.92,138.50 345.16,138.50 M345.16,138.50 C340.40,138.50 336.66,134.76 336.66,130.00 M336.66,130.00 C336.66,125.24 340.40,121.50 345.16,121.50 M361.22,121.50 L361.22,138.50 L371.42,138.50 M378.98,121.50 L378.98,131.70 M378.98,131.70 C378.98,135.61 381.70,138.50 385.10,138.50 M385.10,138.50 C388.50,138.50 391.22,135.61 391.22,131.70 M391.22,131.70 L391.22,121.50 M405.23,121.50 L405.23,138.50 M398.77,121.50 L411.69,121.50 M419.25,121.50 L419.25,138.50 M435.30,121.50 C440.06,121.50 443.80,125.24 443.80,130.00 M443.80,130.00 C443.80,134.76 440.06,138.50 435.30,138.50 M435.30,138.50 C430.54,138.50 426.80,134.76 426.80,130.00 M426.80,130.00 C426.80,125.24 430.54,121.50 435.30,121.50 M451.36,138.50 L451.36,121.50 L463.60,138.50 L463.60,121.50 M482.37,124.90 C481.35,122.52 479.65,121.50 476.93,121.50 M476.93,121.50 C473.87,121.50 471.83,123.20 471.83,125.92 M471.83,125.92 C471.83,128.30 473.87,129.49 476.93,130.34 M476.93,130.34 C480.33,131.36 482.37,132.38 482.37,134.42 M482.37,134.42 C482.37,137.14 479.99,138.50 476.93,138.50 M476.93,138.50 C474.21,138.50 472.17,137.31 471.49,135.10"/></g></svg></span>
+    <span class="marke"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="VYNA — window solutions" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpmMTU4MjMzNC00NDJhLTQ4YTYtOWZmOS02MjQzZjRmZjE2YzYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaI5Dq3Ock4HqKXIHUGhTJagAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo5OTI2NjQ5NS01YTk4LTRlY2YtODc3Zi1hMWM5MTc1Nzk1YmNscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoz7EXQjHKuTnG/pIsRdbUDgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg4u3Qs8Blw0fihzrQI5AM4Ft/erjU64+oKCWI9qurZvikZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaEE+8d4NuN6WjMhj9CoaOj8AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCCpLTLLZe2oZOZYHsaJw+hCNBdn7M/+/Y17ezskzXBzBWRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjIZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmYxNTgyMzM0LTQ0MmEtNDhhNi05ZmY5LTYyNDNmNGZmMTZjNi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmQ5NjAyOWRhLWUwZDYtNDc3NS05OGUzLWQyMTM5OTY4YzdiN3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDi7dCzwGXDR+KHOtAjkAzgW396uNTrj6goJYj2q6tm+KJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFgga3VQsdwlU+QL1ayjNxGK5VYIqo5g+NwGeMolGv7Laa6iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggICMgX1rvuET0pEr9OLVbAa5OZc684Tzw7z8Val3WKbF0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQOHHSznV6uAoGBITz9m+NZjY63rWSZLwDVmAFK10fJTUstrwpzi6aVscqVvJhWUUQftUaxpxjt7Ts1QvU4r1I+E=</c2pa:manifest></metadata><g fill="currentColor"><path d="M10.00,10.00 L110.00,10.00 L110.00,11.20 L10.00,11.20 Z"/><path d="M10.00,108.80 L110.00,108.80 L110.00,110.00 L10.00,110.00 Z"/><path d="M108.80,10.00 L110.00,10.00 L110.00,110.00 L108.80,110.00 Z"/><path d="M88.6416 33.0Q88.9008 33.0 88.9008 33.5184Q88.9008 34.0368 88.6416 34.0368Q85.6176 34.0368 83.0256 36.3696Q80.4336 38.7024 78.792 43.108799999999995L61.944 86.9136Q61.8576 87.2592 61.0368 87.2592Q60.215999999999994 87.2592 60.0432 86.9136L38.184 40.1712Q36.715199999999996 37.0608 35.16 35.5488Q33.6048 34.0368 31.358399999999996 34.0368Q31.099199999999996 34.0368 31.099199999999996 33.5184Q31.099199999999996 33.0 31.358399999999996 33.0Q32.48159999999999 33.0 33.215999999999994 33.0864Q33.950399999999995 33.172799999999995 35.0304 33.215999999999994Q36.1104 33.2592 37.9248 33.2592Q42.071999999999996 33.2592 44.7072 33.215999999999994Q47.3424 33.172799999999995 49.1136 33.0864Q50.8848 33.0 52.2672 33.0Q52.526399999999995 33.0 52.526399999999995 33.5184Q52.526399999999995 34.0368 52.2672 34.0368Q48.6384 34.0368 47.3856 35.8512Q46.132799999999996 37.6656 47.7744 41.035199999999996L64.4496 77.1504L60.907199999999996 83.112L76.4592 42.7632Q77.928 38.8752 76.632 36.456Q75.336 34.0368 70.9296 34.0368Q70.6704 34.0368 70.6704 33.5184Q70.6704 33.0 70.9296 33.0Q73.2624 33.0 75.42240000000001 33.129599999999996Q77.5824 33.2592 81.0384 33.2592Q83.4576 33.2592 84.9696 33.129599999999996Q86.4816 33.0 88.6416 33.0Z"/></g></svg></span>
+  </a>
+
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="#/products" data-route="/products">Range</a>
+    <a href="#/wood" data-route="/wood">The wood</a>
+    <a href="#/grants" data-route="/grants">Grants</a>
+    <a href="#/builders" data-route="/builders">For builders</a>
+    <a href="#/inspiration" data-route="/inspiration">Inspiration</a>
+    <a href="#/about" data-route="/about">About us</a>
+    <a href="#/contact" data-route="/contact">Contact</a>
+  </nav>
+
+  <div class="hdr-sida">
+    <a class="sprak" href="es/index.html" hreflang="es" lang="es">ES</a>
+    <a class="ikonlank" href="https://www.instagram.com/vyna.windows" target="_blank" rel="noopener" aria-label="VYNA on Instagram">
+      <svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a class="ikonlank" href="https://wa.me/34622863188" target="_blank" rel="noopener" aria-label="Message VYNA on WhatsApp">
+      <svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.7-4.8A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.6 9.1c.2 2.1 2.2 4.1 4.3 4.3.5 0 1.2-.5 1.5-.9l1.4.9c-.2.8-1 1.5-1.9 1.5-2.9 0-6.3-3.4-6.3-6.3 0-.9.7-1.7 1.5-1.9l.9 1.4c-.4.3-.9 1-.9 1"/></svg>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═══════════ HOME ═══════════ -->
+<div class="sida" data-sida="/">
+
+  <section class="hero">
+    <img src="assets/photos/hero.jpg" alt="Villa on the Costa del Sol with arched timber windows">
+    <div class="skugga"></div>
+    <div class="inre">
+      <h1>Windows and doors built to your measurements.</h1>
+      <p>Solid timber, made to your design and fitted to your home. We are specialists in everything that does not come in a standard size.</p>
+      <div class="knappar">
+        <a class="knapp" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20I%27d%20like%20a%20quote%20for%20my%20project." target="_blank" rel="noopener">Request a free quote</a>
+        <a class="knapp knapp--linje" href="#/products">See the range</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion">
+    <div class="omslag delad">
+      <div>
+        <p class="etikett">What we do</p>
+        <h2>You get what suits your house — not what happens to be in stock.</h2>
+        <p class="stor">A little too tall, a little too wide, an arch nobody else will quote on. That is the work we enjoy most.</p>
+        <p>Every VYNA window and door is drawn for one single opening. You choose the colour, the glazing bars, the hardware, the glass and the way it opens. If you cannot find what you are looking for, we draw it for you — and we keep drawing until it is right. Our base is on the Costa del Sol and we deliver throughout Spain.</p>
+        <div class="knappar"><a class="knapp knapp--linje" href="#/about">How we work</a></div>
+      </div>
+      <figure class="bild r-45"><img src="assets/photos/insp-10.jpg" alt="Timber entrance door opening onto a courtyard" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion" style="background:var(--bg-alt)">
+    <div class="omslag">
+      <p class="etikett">The range</p>
+      <h2>Five ways to bring in the light.</h2>
+      <div class="kort-rad">
+        <a class="kort" href="#/products/windows">
+          <figure class="bild r-43"><img src="assets/photos/windows-1.jpg" alt="Timber windows in a stone façade" loading="lazy"></figure>
+          <h3>Windows</h3>
+          <p>Your design, your dimensions. Outward or inward opening, pivoting or sliding, round or square.</p>
+          <span class="mer">See windows</span>
+        </a>
+        <a class="kort" href="#/products/entrance-doors">
+          <figure class="bild r-43"><img src="assets/photos/entrance-2.jpg" alt="Grand timber entrance doors" loading="lazy"></figure>
+          <h3>Entrance doors</h3>
+          <p>Solid timber and serious hardware. Single or double, panelled or glazed.</p>
+          <span class="mer">See entrance doors</span>
+        </a>
+        <a class="kort" href="#/products/terrace-doors">
+          <figure class="bild r-43"><img src="assets/photos/terrace-1.jpg" alt="Timber terrace doors onto a garden" loading="lazy"></figure>
+          <h3>Terrace doors</h3>
+          <p>Built in the same profile as our entrance doors, because that is how often you will use them.</p>
+          <span class="mer">See terrace doors</span>
+        </a>
+        <a class="kort" href="#/products/sliding-doors">
+          <figure class="bild r-43"><img src="assets/photos/sliding-2.jpg" alt="Large timber sliding doors by a pool" loading="lazy"></figure>
+          <h3>Sliding doors</h3>
+          <p>Tall, wide and stable. Turn a whole wall into a view and move it with one hand.</p>
+          <span class="mer">See sliding doors</span>
+        </a>
+        <a class="kort" href="#/products/folding-doors">
+          <figure class="bild r-43"><img src="assets/photos/folding-2.jpg" alt="Folding doors opening a living room to a terrace" loading="lazy"></figure>
+          <h3>Folding doors</h3>
+          <p>Closed, they insulate like a window. Open, the wall disappears entirely.</p>
+          <span class="mer">See folding doors</span>
+        </a>
+        <a class="kort" href="#/wood">
+          <figure class="bild r-43"><img src="assets/photos/insp-26.jpg" alt="Warm timber frames in a sunlit room" loading="lazy"></figure>
+          <h3>The wood we build in</h3>
+          <p>Why sapele and sipo behave so well in Mediterranean heat, sun and salt air.</p>
+          <span class="mer">Read about the wood</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag delad">
+      <figure class="bild r-43"><img src="assets/photos/insp-13.jpg" alt="Sunlight falling through a timber terrace door" loading="lazy"></figure>
+      <div>
+        <p class="etikett">Grants</p>
+        <h2>Spain will help pay for it.</h2>
+        <p class="ingress">Replacing old windows is one of the most effective things you can do for a home's energy performance — and the Spanish state rewards it.</p>
+        <p style="color:var(--vyna-dis)">Homeowners can claim back up to 40 % of the cost through the national income tax deduction, and larger renovation projects can reach considerably more. We prepare the documentation your technician needs, and we tell you what to do before the work starts — which is the part most people get wrong.</p>
+        <div class="knappar"><a class="knapp" href="#/grants">How the grants work</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion">
+    <div class="omslag">
+      <p class="etikett">From first call to fitted</p>
+      <h2>How a VYNA project runs.</h2>
+      <div class="steg-lista">
+        <div class="steg">
+          <h3>We come and measure</h3>
+          <p>We visit the property, measure every opening ourselves and look at what the building is asking for.</p>
+        </div>
+        <div class="steg">
+          <h3>We draw it, free of charge</h3>
+          <p>You get drawings and a fixed price. We change them as many times as it takes. Nothing goes into production until you are happy.</p>
+        </div>
+        <div class="steg">
+          <h3>We build it</h3>
+          <p>Made to order in solid timber, then finished, glazed and packed as one delivery.</p>
+        </div>
+        <div class="steg">
+          <h3>We fit it</h3>
+          <p>Delivered to site anywhere in Spain. On the Costa del Sol we fit it ourselves; elsewhere we make sure your installers have everything they need to do it properly.</p>
+        </div>
+      </div>
+      <div class="knappar"><a class="knapp" href="#/contact">Start a project</a></div>
+    </div>
+  </section>
+
+  <section class="sektion" style="background:var(--bg-alt)">
+    <div class="omslag delad">
+      <div>
+        <p class="etikett">For builders and architects</p>
+        <h2>We are the supplier who makes your week easier.</h2>
+        <p>Delivery dates we can actually hold. Quotations you do not have to guess at. Drawings you can take to the planning office. Pallets packed in the order you want to install them.</p>
+        <div class="knappar"><a class="knapp knapp--linje" href="#/builders">Work with us</a></div>
+      </div>
+      <figure class="bild r-32"><img src="assets/photos/insp-09.jpg" alt="Modern villa with timber detailing" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag delad">
+      <div>
+        <p class="citat">A door is never only a door. It is the light in the morning and the calm in the evening.</p>
+        <p class="etikett" style="margin-top:var(--rum-3)">VYNA · San Pedro Alcántara</p>
+        <div class="knappar">
+          <a class="knapp" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener">Talk to us on WhatsApp</a>
+        </div>
+      </div>
+      <figure class="bild r-43"><img src="assets/photos/insp-16.jpg" alt="Timber framed living space at dusk" loading="lazy"></figure>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ RANGE ═══════════ -->
+<div class="sida" data-sida="/products">
+  <section class="sektion sidhuvud">
+    <div class="omslag">
+      <p class="etikett">The range</p>
+      <h1>Everything that opens, made to measure.</h1>
+      <p class="ingress">Standard sizes and millimetre sizes cost exactly the same to draw. So we draw yours.</p>
+    </div>
+  </section>
+
+  <section class="sektion" style="padding-top:0">
+    <div class="omslag">
+      <div class="kort-rad kort-rad--2">
+        <a class="kort" href="#/products/windows">
+          <figure class="bild r-32"><img src="assets/photos/windows-2.jpg" alt="Row of arched timber windows" loading="lazy"></figure>
+          <h3>Windows</h3>
+          <p>Two profiles, endless shapes. Energy glass as standard, aluminium cladding when you want to forget about maintenance.</p>
+          <span class="mer">See windows</span>
+        </a>
+        <a class="kort" href="#/products/entrance-doors">
+          <figure class="bild r-32"><img src="assets/photos/entrance-1.jpg" alt="Timber entrance door with side panels" loading="lazy"></figure>
+          <h3>Entrance doors</h3>
+          <p>The first thing a guest touches. Solid, secure and built to still look right in twenty years.</p>
+          <span class="mer">See entrance doors</span>
+        </a>
+        <a class="kort" href="#/products/terrace-doors">
+          <figure class="bild r-32"><img src="assets/photos/terrace-2.jpg" alt="Terrace door with sunlight across the floor" loading="lazy"></figure>
+          <h3>Terrace doors</h3>
+          <p>In this climate the terrace door is the main entrance. We build it like one.</p>
+          <span class="mer">See terrace doors</span>
+        </a>
+        <a class="kort" href="#/products/sliding-doors">
+          <figure class="bild r-32"><img src="assets/photos/sliding-1.jpg" alt="Timber sliding doors" loading="lazy"></figure>
+          <h3>Sliding doors</h3>
+          <p>Floor to ceiling glass that glides with one hand and stays exactly where you leave it.</p>
+          <span class="mer">See sliding doors</span>
+        </a>
+        <a class="kort" href="#/products/folding-doors">
+          <figure class="bild r-32"><img src="assets/photos/folding-1.jpg" alt="Folding doors onto a garden" loading="lazy"></figure>
+          <h3>Folding doors</h3>
+          <p>Fully insulated, made for rooms you heat and cool. Openness and privacy from the same wall.</p>
+          <span class="mer">See folding doors</span>
+        </a>
+        <a class="kort" href="#/wood">
+          <figure class="bild r-32"><img src="assets/photos/insp-20.jpg" alt="Detail of a timber frame" loading="lazy"></figure>
+          <h3>The wood</h3>
+          <p>Sapele and sipo — what they are, why they suit this climate, and how they age.</p>
+          <span class="mer">Read about the wood</span>
+        </a>
+      </div>
+      <p class="finstilt">Full technical documentation — U-values, frame depths, performance declarations and CE marking — is available for every product on request. Just ask, and we send it the same day.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ WINDOWS ═══════════ -->
+<div class="sida" data-sida="/products/windows">
+  <section class="sektion sidhuvud">
+    <div class="omslag">
+      <p class="etikett">Range · Windows</p>
+      <h1>Windows in your design, down to the millimetre.</h1>
+      <p class="ingress">Beautiful from the street and genuinely comfortable from the inside. Choose the colour, the bars, the hardware, the glass and the way it opens — we take care of the rest.</p>
+    </div>
+  </section>
+
+  <section class="sektion" style="padding-top:0">
+    <div class="omslag">
+      <figure class="bild r-169"><img src="assets/photos/windows-2.jpg" alt="Arched timber windows in a white façade" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion sektion--tat">
+    <div class="omslag delad delad--topp">
+      <div>
+        <h2>Lux</h2>
+        <p class="etikett" style="margin-top:calc(-1 * var(--rum-2))">Outward opening</p>
+        <p>Classic craft in modern materials. Lux can be made with or without a traditional rustic profile and in several frame dimensions, so it follows the period of the house instead of fighting it. Slim, quiet and timeless.</p>
+        <dl class="val">
+          <div><dt>Opening</dt><dd>Outward, side-hung, pivot or side-sliding</dd></div>
+          <div><dt>Glass</dt><dd>Sealed energy unit. Solar control, acoustic, tinted, privacy and safety glass available</dd></div>
+          <div><dt>Wood</dt><dd>Sapele, with aluminium cladding as an option</dd></div>
+          <div><dt>Colour</dt><dd>Any RAL or NCS shade</dd></div>
+          <div><dt>Bars</dt><dd>Vienna bars or true divided lights. Putty rebate on request</dd></div>
+          <div><dt>Sizes</dt><dd>Standard sizes and millimetre sizes</dd></div>
+        </dl>
+      </div>
+      <div>
+        <h2>Retro</h2>
+        <p class="etikett" style="margin-top:calc(-1 * var(--rum-2))">Inward opening</p>
+        <p>Old-fashioned charm with modern performance. The deep inward-opening rustic profiles give a genuinely period feel, while the sealed energy units give you warmth, quiet and comfort. Easy to clean, easy to air, easy to shutter.</p>
+        <dl class="val">
+          <div><dt>Opening</dt><dd>Inward, side-hung or tilt and turn</dd></div>
+          <div><dt>Glass</dt><dd>Sealed energy unit. Solar control, acoustic, tinted, privacy and safety glass available</dd></div>
+          <div><dt>Wood</dt><dd>Sapele, with aluminium cladding as an option</dd></div>
+          <div><dt>Colour</dt><dd>Any RAL or NCS shade</dd></div>
+          <div><dt>Bars</dt><dd>Vienna bars or true divided lights. Putty rebate on request</dd></div>
+          <div><dt>Sizes</dt><dd>Standard sizes and millimetre sizes</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag delad">
+      <figure class="bild r-32"><img src="assets/photos/windows-1.jpg" alt="Timber windows set in a stone wall" loading="lazy"></figure>
+      <div>
+        <h2>Round, arched or simply unusual.</h2>
+        <p class="ingress">If the shape exists, we can make it.</p>
+        <p style="color:var(--vyna-dis)">Arched heads, circles, tall stairwell lights and openings nobody else will quote on. Classic details are there if you want them — tapered hinges, slim sashes with putty rebates, decorative corner irons. And whatever the shape, we specify the glass for the light, the noise, the sun and the security your property actually needs.</p>
+        <div class="knappar">
+          <a class="knapp" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20I%27d%20like%20a%20quote%20for%20windows." target="_blank" rel="noopener">Send us a photo of the opening</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ ENTRANCE DOORS ═══════════ -->
+<div class="sida" data-sida="/products/entrance-doors">
+  <section class="sektion sidhuvud">
+    <div class="omslag">
+      <p class="etikett">Range · Entrance doors</p>
+      <h1>An entrance that actually welcomes people.</h1>
+      <p class="ingress">A front door should not only be beautiful. It should be strong, reassuring and built to keep working year after year.</p>
+    </div>
+  </section>
+
+  <section class="sektion" style="padding-top:0">
+    <div class="omslag">
+      <figure class="bild r-169"><img src="assets/photos/entrance-1.jpg" alt="Timber entrance doors with glazed panels" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion sektion--tat">
+    <div class="omslag delad delad--topp">
+      <div>
+        <p>We use solid timber and the best hardware we can buy, because a front door is opened thousands of times a year and every one of those times should feel like the first.</p>
+        <p>Choose a panelled door or a pair, add side lights or a fanlight above, and pick a colour that either disappears into the façade or announces itself. We prepare for the lock and handle you want, digital locks included, so the door arrives ready.</p>
+        <dl class="val">
+          <div><dt>Opening</dt><dd>Inward or outward, side-hung, single or double</dd></div>
+          <div><dt>Glass</dt><dd>Sealed energy unit. Solar control, acoustic, tinted, privacy and safety glass available</dd></div>
+          <div><dt>Wood</dt><dd>Solid sapele, with aluminium cladding as an option</dd></div>
+          <div><dt>Colour</dt><dd>Any RAL or NCS shade</dd></div>
+          <div><dt>Bars</dt><dd>Vienna bars or true divided lights</dd></div>
+          <div><dt>Sizes</dt><dd>Standard sizes and millimetre sizes</dd></div>
+        </dl>
+      </div>
+      <figure class="bild r-23"><img src="assets/photos/entrance-2.jpg" alt="Tall panelled timber entrance doors" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag">
+      <h2>Bring us a photo, a sketch or a drawing.</h2>
+      <p class="ingress">Any of the three is enough to start. We draw the proposal free of charge and change it until you are happy.</p>
+      <div class="knappar">
+        <a class="knapp" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20I%27d%20like%20a%20quote%20for%20an%20entrance%20door." target="_blank" rel="noopener">Ask for a quote</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ TERRACE DOORS ═══════════ -->
+<div class="sida" data-sida="/products/terrace-doors">
+  <section class="sektion sidhuvud">
+    <div class="omslag">
+      <p class="etikett">Range · Terrace doors</p>
+      <h1>The door you will use more than the front door.</h1>
+      <p class="ingress">Here the terrace is another room. So we build the door to it in the same heavy profile as an entrance door — same security, same feel, same quality, from the garden side.</p>
+    </div>
+  </section>
+
+  <section class="sektion" style="padding-top:0">
+    <div class="omslag">
+      <figure class="bild r-169"><img src="assets/photos/terrace-1.jpg" alt="Timber terrace doors opening onto a garden" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion sektion--tat">
+    <div class="omslag delad delad--topp">
+      <figure class="bild r-23"><img src="assets/photos/terrace-2.jpg" alt="Morning light through a terrace door" loading="lazy"></figure>
+      <div>
+        <p>A terrace door has two jobs at once. It has to seal like a window when it is closed, in August as much as in January, and it has to be a pleasure to walk through twenty times a day.</p>
+        <p>Large glass areas, a threshold that does not trip you, and hardware chosen for the salt in the air. Add a matching side light and the whole room opens toward the garden.</p>
+        <dl class="val">
+          <div><dt>Opening</dt><dd>Inward or outward, side-hung, single or double</dd></div>
+          <div><dt>Glass</dt><dd>Sealed energy unit. Solar control, acoustic, tinted, privacy and safety glass available</dd></div>
+          <div><dt>Wood</dt><dd>Solid sapele, with aluminium cladding as an option</dd></div>
+          <div><dt>Colour</dt><dd>Any RAL or NCS shade</dd></div>
+          <div><dt>Bars</dt><dd>Vienna bars or true divided lights</dd></div>
+          <div><dt>Sizes</dt><dd>Standard sizes and millimetre sizes</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag">
+      <h2>Tell us what the room should feel like.</h2>
+      <p class="ingress">We will suggest the opening, the glass and the threshold that gets you there.</p>
+      <div class="knappar">
+        <a class="knapp" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20I%27d%20like%20a%20quote%20for%20a%20terrace%20door." target="_blank" rel="noopener">Ask for a quote</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ SLIDING DOORS ═══════════ -->
+<div class="sida" data-sida="/products/sliding-doors">
+  <section class="sektion sidhuvud">
+    <div class="omslag">
+      <p class="etikett">Range · Sliding doors</p>
+      <h1>Turn a wall into a view.</h1>
+      <p class="ingress">When you want to open up the façade and let in as much light as the building allows, a sliding door is the answer. Tall, wide, stable — and light enough for anyone in the family to move.</p>
+    </div>
+  </section>
+
+  <section class="sektion" style="padding-top:0">
+    <div class="omslag">
+      <figure class="bild r-169"><img src="assets/photos/insp-23.jpg" alt="Sliding timber doors along a pool terrace" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion sektion--tat">
+    <div class="omslag delad delad--topp">
+      <div>
+        <p>Floor-to-ceiling glass is the reason most people move here in the first place. A sliding panel lets you have it without a frame in the middle of the view, and it stays exactly where you leave it.</p>
+        <p>They glide easily, they seal properly when they land, and they are ideal wherever a hinged door simply has nowhere to swing.</p>
+        <dl class="val">
+          <div><dt>Opening</dt><dd>Slides to the side</dd></div>
+          <div><dt>Glass</dt><dd>Sealed energy unit. Solar control, acoustic, tinted, privacy and safety glass available</dd></div>
+          <div><dt>Wood</dt><dd>Solid sapele, with aluminium cladding as an option</dd></div>
+          <div><dt>Colour</dt><dd>Any RAL or NCS shade</dd></div>
+          <div><dt>Bars</dt><dd>Vienna bars or true divided lights</dd></div>
+          <div><dt>Sizes</dt><dd>Standard sizes and millimetre sizes</dd></div>
+        </dl>
+      </div>
+      <figure class="bild r-23"><img src="assets/photos/sliding-2.jpg" alt="Villa with timber sliding doors along a pool" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag">
+      <h2>How wide do you want the opening?</h2>
+      <p class="ingress">Send us the measurements, or just a photo of the wall. We will tell you what is possible.</p>
+      <div class="knappar">
+        <a class="knapp" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20I%27d%20like%20a%20quote%20for%20sliding%20doors." target="_blank" rel="noopener">Ask for a quote</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ FOLDING DOORS ═══════════ -->
+<div class="sida" data-sida="/products/folding-doors">
+  <section class="sektion sidhuvud">
+    <div class="omslag">
+      <p class="etikett">Range · Folding doors</p>
+      <h1>Closed it is a window. Open it is a whole wall.</h1>
+      <p class="ingress">Our folding doors are fully insulated and made for rooms you heat and cool. Shut, they perform like a window. Folded back, the room simply continues outside.</p>
+    </div>
+  </section>
+
+  <section class="sektion" style="padding-top:0">
+    <div class="omslag">
+      <figure class="bild r-169"><img src="assets/photos/folding-2.jpg" alt="Folding timber doors opening a living room onto a terrace" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion sektion--tat">
+    <div class="omslag delad delad--topp">
+      <figure class="bild r-23"><img src="assets/photos/folding-1.jpg" alt="Folding doors with a view of palms" loading="lazy"></figure>
+      <div>
+        <p>This is the solution for anyone who wants both openness and privacy from the same wall. In the evening you fold it back and the terrace becomes part of the living room. In August you close it and the air conditioning stops working against you.</p>
+        <p>Because they are fully insulated rather than a simple garden screen, they suit a bedroom or a kitchen just as well as a covered terrace.</p>
+        <dl class="val">
+          <div><dt>Opening</dt><dd>Folds outward</dd></div>
+          <div><dt>Glass</dt><dd>Sealed energy unit. Solar control, acoustic, tinted, privacy and safety glass available</dd></div>
+          <div><dt>Wood</dt><dd>Solid sapele, with aluminium cladding as an option</dd></div>
+          <div><dt>Colour</dt><dd>Any RAL or NCS shade</dd></div>
+          <div><dt>Bars</dt><dd>Vienna bars or true divided lights</dd></div>
+          <div><dt>Sizes</dt><dd>Standard sizes and millimetre sizes</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag">
+      <h2>Show us the wall you want to open.</h2>
+      <p class="ingress">A photo is enough. We will come back with what it would take and roughly what it costs.</p>
+      <div class="knappar">
+        <a class="knapp" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20I%27d%20like%20a%20quote%20for%20folding%20doors." target="_blank" rel="noopener">Ask for a quote</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ THE WOOD ═══════════ -->
+<div class="sida" data-sida="/wood">
+  <section class="sektion sidhuvud">
+    <div class="omslag">
+      <p class="etikett">Materials</p>
+      <h1>The wood that gets better the longer you own it.</h1>
+      <p class="ingress">We build in sapele and sipo — two close relatives of mahogany that behave beautifully in a Mediterranean climate and look better every year they spend in the sun.</p>
+    </div>
+  </section>
+
+  <section class="sektion" style="padding-top:0">
+    <div class="omslag">
+      <figure class="bild r-169"><img src="assets/photos/insp-06.jpg" alt="Timber window frames in warm daylight" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion">
+    <div class="omslag delad delad--topp">
+      <div>
+        <p class="etikett">Colour</p>
+        <h2>A warmth you cannot paint on.</h2>
+      </div>
+      <div>
+        <p>Sapele starts a golden reddish brown and deepens, over the years, into something closer to old mahogany. The grain runs in alternating directions, which is what produces that soft ribbon shimmer across a sash when the light moves round the house.</p>
+        <p>It is the reason people who see it oiled rarely want it painted. But if you do want colour, it takes a finish beautifully — any RAL or NCS shade, matt or satin, inside and out, and the two do not have to match.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag delad delad--topp">
+      <div>
+        <p class="etikett">Climate</p>
+        <h2>Made for heat, sun and salt air.</h2>
+      </div>
+      <div>
+        <p style="color:var(--vyna-dis)">Spain asks a lot of joinery. On the coast it is the sun, the humidity and the salt on the wind. Inland it is the swing between a forty-degree afternoon and a cold night, which is what moves timber and opens joints. Sapele takes both in its stride.</p>
+        <p style="color:var(--vyna-dis)">It is dense and steady, so a tall door leaf stays flat and a window keeps closing sweetly through the seasons. It has good natural resistance to damp, rot and insects. And because the trees grow tall and straight, we can cut long clean lengths — which means big sliding panels and full-height doors without a joint where you would rather not see one.</p>
+        <p style="color:var(--vyna-dis)">The hardware is chosen for the same reason. Fittings that shrug off salt, on a wood that shrugs off sun.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion">
+    <div class="omslag delad delad--topp">
+      <div>
+        <p class="etikett">Longevity</p>
+        <h2>Maintainable, not maintenance-free.</h2>
+      </div>
+      <div>
+        <p>We are careful about that distinction. Maintenance-free usually means unrepairable — when something fails, the whole unit goes in a skip. Our products are made to be looked after and, if they are ever damaged, repaired.</p>
+        <p>In practice that means an oil or a light refresh every few years on the exposed side, and very little else. If you would rather not think about it at all, we clad the weather face in powder-coated aluminium and leave the timber on the inside where you can see and touch it.</p>
+        <p>A window looked after this way outlives the person who chose it. That is rather the point.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion" style="background:var(--bg-alt)">
+    <div class="omslag delad delad--topp">
+      <div>
+        <p class="etikett">Responsibility</p>
+        <h2>We know where our timber comes from.</h2>
+      </div>
+      <div>
+        <p>Tropical hardwood carries an obligation and we take it seriously. We work with traceable material and documented supply chains, and we would rather turn down an order than lose track of where the wood was cut.</p>
+        <p>The same goes for what we put on it. Water-based paints and environmentally certified sealants, chosen to be kind to the people applying them as well as to the house they end up on.</p>
+        <p>If you want the paperwork behind any of this, ask. We would be glad to show you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag">
+      <h2>Come and hold a sample.</h2>
+      <p class="ingress">Wood is hard to judge from a screen. We keep samples at the office in San Pedro Alcántara and you are welcome to come and see the difference between oiled and painted in daylight. If you are further away, we will post them to you.</p>
+      <div class="knappar">
+        <a class="knapp" href="#/contact">Book a visit</a>
+        <a class="knapp knapp--linje" href="#/products">See the range</a>
+      </div>
+      <p class="finstilt">Technical documentation — U-values, frame depths, performance declarations and material certificates — is available on request for every product.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ GRANTS ═══════════ -->
+<div class="sida" data-sida="/grants">
+  <section class="sektion sidhuvud">
+    <div class="omslag">
+      <p class="etikett">Energy grants in Spain</p>
+      <h1>Up to 40 % of your window replacement, back in your pocket.</h1>
+      <p class="ingress">Changing old windows is one of the most effective energy improvements you can make to a home in Spain — and there is public money to encourage it. Most owners simply never claim it.</p>
+    </div>
+  </section>
+
+  <section class="sektion" style="padding-top:0">
+    <div class="omslag">
+      <figure class="bild r-169"><img src="assets/photos/insp-04.jpg" alt="Sunlit Mediterranean house with timber windows" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion">
+    <div class="omslag delad delad--topp">
+      <div>
+        <p class="etikett">What is available</p>
+        <h2>Two routes, and they can be combined.</h2>
+      </div>
+      <div>
+        <p>The national income tax deduction gives private owners a percentage of the cost back through their Spanish tax return, rising with the energy improvement achieved. For a typical window replacement that is up to 40 %.</p>
+        <p>On top of that, every autonomous community runs its own grant programmes for energy renovation, Andalucía included. Where a whole building is upgraded and the savings are substantial, the combined support can go considerably higher.</p>
+        <p>Which one fits your project depends on the property, the scope of work and what is open at the time. We will tell you plainly which is worth pursuing — including when the honest answer is neither.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag">
+      <p class="etikett">Get this part right</p>
+      <h2>Three things decide whether you get the money.</h2>
+      <div class="steg-lista">
+        <div class="steg">
+          <h3>Apply before the work starts</h3>
+          <p>This is where most claims are lost. Begin the installation before the application is in and the grant is usually gone for good, with no way to correct it. Talk to us early.</p>
+        </div>
+        <div class="steg">
+          <h3>Get the energy certificate done twice</h3>
+          <p>A qualified technician certifies the property before the work and again afterwards, showing the improvement achieved. We can point you to people who do this.</p>
+        </div>
+        <div class="steg">
+          <h3>Pay traceably</h3>
+          <p>Bank transfer or card, to a registered company, with a proper invoice. Cash payments cannot be claimed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion">
+    <div class="omslag delad delad--topp">
+      <div>
+        <p class="etikett">Our part</p>
+        <h2>We give your technician everything they need.</h2>
+      </div>
+      <div>
+        <p>We are window makers, not tax advisers — but we know which documents an application asks for, and we prepare them without being chased.</p>
+        <p>Performance figures for the products you have chosen, declarations of performance, an invoice specified the way the authorities want to see it, and a clear before-and-after description of what was replaced. If you need a technician or a gestor, we will point you toward one we have worked with.</p>
+        <div class="knappar">
+          <a class="knapp" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20I%27d%20like%20to%20know%20about%20energy%20grants%20for%20my%20project." target="_blank" rel="noopener">Ask about your project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion" style="background:var(--bg-alt)">
+    <div class="omslag">
+      <p class="finstilt" style="margin-top:0">Grant levels, deadlines and conditions are set by the Spanish state and by each autonomous community, and they change from year to year. The figures on this page are indicative. We confirm what applies to your property, wherever it is, at the time we quote.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ FOR BUILDERS ═══════════ -->
+<div class="sida" data-sida="/builders">
+  <section class="sektion sidhuvud">
+    <div class="omslag">
+      <p class="etikett">For builders, contractors and architects</p>
+      <h1>Our job is to make yours easier.</h1>
+      <p class="ingress">We know what you need from a supplier: dates that hold, answers that are clear, and a delivery that does not create a day of extra work on site.</p>
+    </div>
+  </section>
+
+  <section class="sektion" style="padding-top:0">
+    <div class="omslag">
+      <figure class="bild r-169"><img src="assets/photos/insp-25.jpg" alt="Contemporary house with large timber openings" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion">
+    <div class="omslag">
+      <div class="kort-rad">
+        <div>
+          <h3>Dates we can hold</h3>
+          <p>We do not quote optimistic dates to win work. You get the date we are confident of. It may arrive earlier. It should never arrive later.</p>
+        </div>
+        <div>
+          <h3>Quotations without guesswork</h3>
+          <p>Different colours in the same set is an ordinary day for us. We check the hardware and the safety classes and write it all down, so nobody has to interpret what was included.</p>
+        </div>
+        <div>
+          <h3>Drawings you can use</h3>
+          <p>We turn your sketches, or your client's ideas, into drawings quickly — for discussion, for the planning application and for the structural work.</p>
+        </div>
+        <div>
+          <h3>Packed to your plan</h3>
+          <p>Tell us the order you want to install and we pack the pallets to match, with weights and sizes adjusted so they can be handled on your site.</p>
+        </div>
+        <div>
+          <h3>We help your client choose</h3>
+          <p>Design, colour, hardware, glass — we take your client through it as many times as it takes, at no cost. They end up happy, which means you do.</p>
+        </div>
+        <div>
+          <h3>One person, all the way</h3>
+          <p>The same contact from first enquiry to final snag. No handover, no repeating yourself, no ticket number.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag delad">
+      <div>
+        <h2>Send us the drawings and we will come back with a price.</h2>
+        <p class="ingress">One opening or three hundred, on the coast or four hours inland. We are big enough to handle the roll-out and small enough to answer the phone when you need us urgently.</p>
+        <div class="knappar">
+          <a class="knapp" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20I%27m%20a%20builder%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Talk to us on WhatsApp</a>
+          <a class="knapp knapp--linje" href="#/contact">Send the drawings</a>
+        </div>
+      </div>
+      <figure class="bild r-43"><img src="assets/photos/insp-17.jpg" alt="Timber sliding partition in a contemporary interior" loading="lazy"></figure>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ INSPIRATION ═══════════ -->
+<div class="sida" data-sida="/inspiration">
+  <section class="sektion sidhuvud">
+    <div class="omslag">
+      <p class="etikett">Inspiration</p>
+      <h1>Wood, light and a little imagination.</h1>
+      <p class="ingress">Shapes, colours and details to steal for your own project. See something you like? Send us the picture and we will tell you how to get it.</p>
+      <div class="knappar">
+        <a class="knapp" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20I%20saw%20something%20on%20your%20inspiration%20page%20I%27d%20like%20to%20talk%20about." target="_blank" rel="noopener">Send us a picture</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion" style="padding-top:0">
+    <div class="omslag">
+      <div class="galleri">
+        <figure class="bild"><img src="assets/photos/insp-01.jpg" alt="Timber windows in a Mediterranean façade" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-02.jpg" alt="Tall timber window detail" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-03.jpg" alt="Arched timber window" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-04.jpg" alt="Whitewashed villa with dark timber joinery" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-05.jpg" alt="Ornate timber balcony windows" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-06.jpg" alt="Arched windows along a courtyard" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-07.jpg" alt="Glazed timber door with fanlight" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-08.jpg" alt="Timber framed glazing onto greenery" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-09.jpg" alt="Modern villa with timber cladding" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-10.jpg" alt="Timber door open onto a planted courtyard" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-11.jpg" alt="Classic panelled entrance doors" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-12.jpg" alt="Slim timber glazing bars" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-13.jpg" alt="Interior with timber doors onto a garden" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-14.jpg" alt="Whitewashed house with timber shutters" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-15.jpg" alt="Traditional doorway with terracotta pots" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-16.jpg" alt="Timber framed room at dusk" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-17.jpg" alt="Timber sliding partition" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-18.jpg" alt="Arched window above a terrace" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-19.jpg" alt="Panelled door in a rendered wall" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-20.jpg" alt="Detail of a timber frame and handle" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-21.jpg" alt="Grand timber doors beneath an arch" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-22.jpg" alt="Modern timber entrance in shadow" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-23.jpg" alt="Villa with timber openings along a pool" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-24.jpg" alt="Timber window with decorative glazing" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-25.jpg" alt="Contemporary house with large openings" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-26.jpg" alt="Warm timber interior with tall glazing" loading="lazy"></figure>
+        <figure class="bild"><img src="assets/photos/insp-27.jpg" alt="Timber doors onto a stone terrace" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag">
+      <h2>Found the one?</h2>
+      <p class="ingress">Send us the picture and the rough size of your opening. We will tell you what it would take to build it, and roughly what it costs, before anyone commits to anything.</p>
+      <div class="knappar">
+        <a class="knapp" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20here%27s%20the%20look%20I%27m%20after." target="_blank" rel="noopener">Send it on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<div class="sida" data-sida="/about">
+  <section class="sektion sidhuvud">
+    <div class="omslag">
+      <p class="etikett">About us</p>
+      <h1>A company built by friends who like getting it right.</h1>
+      <p class="ingress">VYNA brings Scandinavian window making to Spain — the deep frames, the precise seals and the stubborn insistence on quality — and adapts all of it to a climate of sun, heat and salt.</p>
+    </div>
+  </section>
+
+  <section class="sektion" style="padding-top:0">
+    <div class="omslag">
+      <figure class="bild r-169"><img src="assets/photos/insp-01.jpg" alt="Timber windows in a Mediterranean stone façade" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sektion">
+    <div class="omslag delad delad--topp">
+      <div>
+        <p class="etikett">Why we exist</p>
+        <h2>Because a window is not just a window.</h2>
+      </div>
+      <div>
+        <p>It is the light on a Sunday morning, the quiet when the road outside is busy, and the warmth of a room at the end of the day. It is also the only part of a house you look at from both sides.</p>
+        <p>Too many homes on this coast were fitted with whatever was in stock, in a size that was near enough. We think you should get the opposite: something drawn for your house, in a material that ages well, made once and made properly.</p>
+        <p>High, low, round or entirely one of a kind — we build what fits you, not the other way round.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion invers">
+    <div class="omslag">
+      <p class="etikett">What you can hold us to</p>
+      <h2>Four promises.</h2>
+      <div class="steg-lista">
+        <div class="steg">
+          <h3>We respect the building</h3>
+          <p>We adapt to the house rather than asking the house to adapt to us. That matters as much in a century-old finca as in a new architect-designed villa.</p>
+        </div>
+        <div class="steg">
+          <h3>We build things that last</h3>
+          <p>Solid materials, energy glass and timeless proportions. Not a cost but an investment in the house — and a great deal kinder to the planet than replacing something every fifteen years.</p>
+        </div>
+        <div class="steg">
+          <h3>We make it easy</h3>
+          <p>Thoughtful details, low maintenance and one person who knows your project from the first visit to the last adjustment.</p>
+        </div>
+        <div class="steg">
+          <h3>We are decent to deal with</h3>
+          <p>Honesty, listening and solving problems together. It is why our customers come back and why our partnerships last.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion">
+    <div class="omslag delad">
+      <div>
+        <p class="etikett">Where to find us</p>
+        <h2>San Pedro Alcántara.</h2>
+        <p class="ingress">Our office sits between Marbella and Estepona, ten minutes from most of the projects we work on. That is our base, not our boundary — our deliveries go the length of the country. Visits by appointment: bring your plans and we will put the coffee on.</p>
+        <div class="knappar">
+          <a class="knapp" href="#/contact">Book a visit</a>
+        </div>
+      </div>
+      <dl style="margin:0">
+        <div class="uppgift">
+          <dt>Address</dt>
+          <dd><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xac5c1b67e67a761:0xe8e461566bfa9ae8" target="_blank" rel="noopener">C. Finlandia 14, 29670 San Pedro Alcántara, Málaga</a></dd>
+        </div>
+        <div class="uppgift">
+          <dt>WhatsApp</dt>
+          <dd><a href="https://wa.me/34622863188" target="_blank" rel="noopener">+34 622 863 188</a></dd>
+        </div>
+        <div class="uppgift">
+          <dt>Instagram</dt>
+          <dd><a href="https://www.instagram.com/vyna.windows" target="_blank" rel="noopener">@vyna.windows</a></dd>
+        </div>
+        <div class="uppgift">
+          <dt>Languages</dt>
+          <dd>English · Español · Svenska</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<div class="sida" data-sida="/contact">
+  <section class="sektion sidhuvud">
+    <div class="omslag">
+      <p class="etikett">Contact</p>
+      <h1>Tell us about the opening.</h1>
+      <p class="ingress">The fastest way to reach us is WhatsApp. Send a photo of the window, door or wall you have in mind and we will come back to you the same day.</p>
+      <div class="knappar">
+        <a class="knapp" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener">Open WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sektion" style="padding-top:0">
+    <div class="omslag delad delad--topp">
+      <div>
+        <p class="etikett">Or write to us here</p>
+        <form class="formular" id="waform" novalidate>
+          <div class="falt">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name">
+          </div>
+          <div class="falt">
+            <label for="f-place">Where is the property</label>
+            <input id="f-place" name="place" type="text" placeholder="Marbella, Estepona, Sotogrande…">
+          </div>
+          <div class="falt">
+            <label for="f-type">What do you need</label>
+            <select id="f-type" name="type">
+              <option>Windows</option>
+              <option>Entrance door</option>
+              <option>Terrace doors</option>
+              <option>Sliding doors</option>
+              <option>Folding doors</option>
+              <option>A mix — whole property</option>
+              <option>Builder or architect enquiry</option>
+            </select>
+          </div>
+          <div class="falt">
+            <label for="f-msg">Tell us a little more</label>
+            <textarea id="f-msg" name="msg" placeholder="Number of openings, rough sizes, timing — whatever you know so far."></textarea>
+          </div>
+          <div><button class="knapp" type="submit">Send on WhatsApp</button></div>
+          <p class="notis">This opens WhatsApp with your message ready to send, so nothing is stored on this website. Prefer email? Write to <a href="mailto:hello@vyna.es">hello@vyna.es</a>.</p>
+        </form>
+      </div>
+
+      <div>
+        <figure class="bild r-43"><img src="assets/photos/insp-15.jpg" alt="Timber doorway with potted plants" loading="lazy"></figure>
+        <dl style="margin:var(--rum-4) 0 0">
+          <div class="uppgift">
+            <dt>Office and samples</dt>
+            <dd><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xac5c1b67e67a761:0xe8e461566bfa9ae8" target="_blank" rel="noopener">C. Finlandia 14<br>29670 San Pedro Alcántara<br>Málaga, Spain</a></dd>
+          </div>
+          <div class="uppgift">
+            <dt>WhatsApp and phone</dt>
+            <dd><a href="https://wa.me/34622863188" target="_blank" rel="noopener">+34 622 863 188</a></dd>
+          </div>
+          <div class="uppgift">
+            <dt>Email</dt>
+            <dd><a href="mailto:hello@vyna.es">hello@vyna.es</a></dd>
+          </div>
+          <div class="uppgift">
+            <dt>Instagram</dt>
+            <dd><a href="https://www.instagram.com/vyna.windows" target="_blank" rel="noopener">@vyna.windows</a></dd>
+          </div>
+          <div class="uppgift">
+            <dt>Hours</dt>
+            <dd>Monday to Friday, 9:00–18:00<br>Site visits by appointment</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="fot">
+  <div class="omslag">
+    <a class="logo" href="#/" aria-label="VYNA — window solutions"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 604 172" role="img" aria-label="VYNA — window solutions" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTozYTBkYjY2NC1kMTFkLTRlMWMtOTBjNy1lNmMwZTA4NDMwMTYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaK3YQ9hS30MkUj+bEYh+rsEAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoxNGIwMjJkNS1iMTliLTRiZWEtOGYwZS0xMzUwZDVlYmM5MTdscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNosfpsBaeM0jB2JjvmCQwsrAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggc329RRmWVy+fIroNQfpHUmKnJsJ9lng98ZVOSqcrfpikZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaCBKfak95J1TkeqYQeN5M6gAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCDxTRFlKdDQAh9KZ8ZyCqsH61CHOOdOa5LxXW2DhOr+E2RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjIZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjNhMGRiNjY0LWQxMWQtNGUxYy05MGM3LWU2YzBlMDg0MzAxNi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjJiZjE3MzY3LTU0ZGMtNGYyMi1iZTA3LTFiNWVmOTlmMTEzOHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBzfb1FGZZXL58iug1B+kdSYqcmwn2WeD3xlU5Kpyt+mKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggHJnx7poHVdigbwnX3YmD8PU1qtuSsteqCBLZdWC8mHGiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgguael5cGdz6lWAfSQAr0Js8vNhj8EXGtMp7KVHElRktp0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQH39iNGcMYRJgV6aW8daHLuVD0OfoZcB4OdKd2kKCzuXurIX8C1DuQaA9MaibMGtdzJ9EANvd/5jJsirr8G9yso=</c2pa:manifest></metadata><g fill="currentColor"><path d="M34.00,34.00 L138.00,34.00 L138.00,35.25 L34.00,35.25 Z"/><path d="M34.00,136.75 L138.00,136.75 L138.00,138.00 L34.00,138.00 Z"/><path d="M136.75,34.00 L138.00,34.00 L138.00,138.00 L136.75,138.00 Z"/><path d="M115.787264 57.919999999999995Q116.05683200000001 57.919999999999995 116.05683200000001 58.459135999999994Q116.05683200000001 58.99827199999999 115.787264 58.99827199999999Q112.642304 58.99827199999999 109.946624 61.42438399999999Q107.250944 63.85049599999999 105.54368 68.43315199999999L88.02176 113.990144Q87.931904 114.349568 87.078272 114.349568Q86.22464 114.349568 86.044928 113.990144L63.31136 65.37804799999999Q61.783808 62.143232 60.166399999999996 60.570752Q58.548992 58.99827199999999 56.212736 58.99827199999999Q55.943168 58.99827199999999 55.943168 58.459135999999994Q55.943168 57.919999999999995 56.212736 57.919999999999995Q57.380864 57.919999999999995 58.14464 58.009856Q58.908416 58.099712 60.031616 58.144639999999995Q61.154816 58.189567999999994 63.041792 58.189567999999994Q67.35488000000001 58.189567999999994 70.095488 58.144639999999995Q72.836096 58.099712 74.678144 58.009856Q76.52019200000001 57.919999999999995 77.957888 57.919999999999995Q78.227456 57.919999999999995 78.227456 58.459135999999994Q78.227456 58.99827199999999 77.957888 58.99827199999999Q74.183936 58.99827199999999 72.881024 60.88524799999999Q71.578112 62.772223999999994 73.285376 66.276608L90.627584 103.836416L86.943488 110.03648L103.117568 68.07372799999999Q104.64512 64.03020799999999 103.29728 61.51423999999999Q101.94944000000001 58.99827199999999 97.366784 58.99827199999999Q97.097216 58.99827199999999 97.097216 58.459135999999994Q97.097216 57.919999999999995 97.366784 57.919999999999995Q99.79289600000001 57.919999999999995 102.03929600000001 58.054784Q104.285696 58.189567999999994 107.879936 58.189567999999994Q110.395904 58.189567999999994 111.968384 58.054784Q113.540864 57.919999999999995 115.787264 57.919999999999995Z"/><path d="M251.44 33.5Q251.7664 33.5 251.7664 34.1528Q251.7664 34.8056 251.44 34.8056Q248.0672 34.8056 245.5104 36.22Q242.9536 37.63440000000001 240.9952 42.3128L217.0592 101.3912Q216.9504 101.8264 215.91680000000002 101.8264Q214.88320000000002 101.8264 214.6656 101.3912L187.792 42.5304Q185.94240000000002 38.287200000000006 183.8752 36.546400000000006Q181.80800000000002 34.8056 178.3264 34.8056Q178.0 34.8056 178.0 34.1528Q178.0 33.5 178.3264 33.5Q179.8496 33.5 181.42720000000003 33.6088Q183.00480000000002 33.717600000000004 184.5824 33.772000000000006Q186.16000000000003 33.82640000000001 187.57440000000003 33.82640000000001Q190.18560000000002 33.82640000000001 192.3616 33.772000000000006Q194.5376 33.717600000000004 196.33280000000002 33.6088Q198.12800000000001 33.5 199.76000000000002 33.5Q200.0864 33.5 200.0864 34.1528Q200.0864 34.8056 199.76000000000002 34.8056Q195.62560000000002 34.8056 193.8848 36.1656Q192.144 37.525600000000004 193.99360000000001 41.442400000000006L218.3648 95.2984L215.4272 99.324L238.7104 41.660000000000004Q240.23360000000002 37.852000000000004 238.60160000000002 36.3288Q236.9696 34.8056 230.8768 34.8056Q230.55040000000002 34.8056 230.55040000000002 34.1528Q230.55040000000002 33.5 230.8768 33.5Q233.37920000000003 33.5 235.71840000000003 33.6632Q238.0576 33.82640000000001 241.7568 33.82640000000001Q244.912 33.82640000000001 246.81600000000003 33.6632Q248.72000000000003 33.5 251.44 33.5Z"/><path d="M316.0672 69.94800000000001 333.04 44.2712Q336.0864 39.484 335.216 37.144800000000004Q334.3456 34.8056 329.5584 34.8056Q329.3408 34.8056 329.3408 34.1528Q329.3408 33.5 329.5584 33.5Q332.3872 33.5 334.9984 33.6632Q337.6096 33.82640000000001 341.744 33.82640000000001Q344.464 33.82640000000001 346.1504 33.6632Q347.8368 33.5 350.23040000000003 33.5Q350.448 33.5 350.448 34.1528Q350.448 34.8056 350.23040000000003 34.8056Q347.5104 34.8056 344.8992 35.948Q342.288 37.0904 339.9488 39.266400000000004Q337.6096 41.442400000000006 335.5424 44.5976L317.808 71.47120000000001ZM316.176 72.0152 295.8304 42.5304Q293.0016 38.287200000000006 290.2816 36.546400000000006Q287.5616 34.8056 283.536 34.8056Q283.2096 34.8056 283.2096 34.1528Q283.2096 33.5 283.536 33.5Q285.3856 33.5 287.5072 33.6632Q289.6288 33.82640000000001 291.4784 33.82640000000001Q294.416 33.82640000000001 296.9728 33.772000000000006Q299.5296 33.717600000000004 301.8144 33.6088Q304.0992 33.5 305.9488 33.5Q306.1664 33.5 306.1664 34.1528Q306.1664 34.8056 305.9488 34.8056Q301.488 34.8056 300.2912 35.784800000000004Q299.0944 36.76400000000001 300.8352 39.1576L320.2016 67.0104ZM314.4352 67.77199999999999 320.2016 66.7928V92.6872Q320.2016 95.8424 320.8544 97.4744Q321.5072 99.1064 323.57439999999997 99.65039999999999Q325.6416 100.1944 329.776 100.1944Q330.1024 100.1944 330.1024 100.8472Q330.1024 101.5 329.776 101.5Q327.2736 101.5 324.1184 101.3912Q320.96320000000003 101.2824 317.264 101.2824Q313.6736 101.2824 310.4096 101.3912Q307.1456 101.5 304.6432 101.5Q304.3168 101.5 304.3168 100.8472Q304.3168 100.1944 304.6432 100.1944Q308.7776 100.1944 310.8992 99.65039999999999Q313.0208 99.1064 313.728 97.4744Q314.4352 95.8424 314.4352 92.6872Z"/><path d="M395.2736 90.1848V36.00240000000001L397.6672 36.22V90.1848Q397.6672 95.7336 399.5168 97.964Q401.3664 100.1944 405.93600000000004 100.1944Q406.2624 100.1944 406.2624 100.8472Q406.2624 101.5 405.93600000000004 101.5Q403.8688 101.5 401.63840000000005 101.3912Q399.408 101.2824 396.688 101.2824Q394.0768 101.2824 391.6832 101.3912Q389.2896 101.5 387.1136 101.5Q386.896 101.5 386.896 100.8472Q386.896 100.1944 387.1136 100.1944Q391.9008 100.1944 393.5872 97.964Q395.2736 95.7336 395.2736 90.1848ZM450.0 102.6968Q450.0 102.9144 449.456 102.9688Q448.91200000000003 103.0232 448.6944 102.9144L399.5168 42.421600000000005Q395.8176 37.960800000000006 392.9344 36.3832Q390.0512 34.8056 387.44 34.8056Q387.1136 34.8056 387.1136 34.1528Q387.1136 33.5 387.44 33.5Q389.2896 33.5 391.24800000000005 33.6088Q393.20640000000003 33.717600000000004 394.7296 33.717600000000004Q396.2528 33.717600000000004 397.6128 33.6088Q398.9728 33.5 399.6256 33.5Q401.04 33.5 401.584 34.751200000000004Q402.128 36.00240000000001 404.6304 39.1576L449.1296 94.428ZM450.0 44.92400000000001V102.6968L447.6064 99.324V44.92400000000001Q447.6064 39.37520000000001 445.8656 37.0904Q444.1248 34.8056 439.5552 34.8056Q439.3376 34.8056 439.3376 34.1528Q439.3376 33.5 439.5552 33.5Q441.7312 33.5 443.9616 33.6632Q446.192 33.82640000000001 448.91200000000003 33.82640000000001Q451.4144 33.82640000000001 453.91679999999997 33.6632Q456.4192 33.5 458.4864 33.5Q458.81280000000004 33.5 458.81280000000004 34.1528Q458.81280000000004 34.8056 458.4864 34.8056Q453.808 34.8056 451.904 37.0904Q450.0 39.37520000000001 450.0 44.92400000000001Z"/><path d="M515.7152 70.2744 516.6944 68.316H544.8736L545.6351999999999 70.2744ZM569.4624 100.1944Q569.8976 100.1944 569.8976 100.8472Q569.8976 101.5 569.4624 101.5Q566.4159999999999 101.5 563.2064 101.2824Q559.9968 101.0648 557.0592 101.0648Q553.6863999999999 101.0648 551.2384 101.2824Q548.7904 101.5 545.8528 101.5Q545.4176 101.5 545.4176 100.8472Q545.4176 100.1944 545.8528 100.1944Q551.9456 100.1944 553.5232 98.5624Q555.1007999999999 96.9304 553.0336 92.3608L528.4448 39.484L530.512 37.63440000000001L509.5136 88.1176Q506.79359999999997 94.7544 509.0784 97.4744Q511.3632 100.1944 518.7616 100.1944Q519.3056 100.1944 519.3056 100.8472Q519.3056 101.5 518.7616 101.5Q515.4976 101.5 512.7776 101.2824Q510.0576 101.0648 505.9232 101.0648Q502.1152 101.0648 499.776 101.2824Q497.4368 101.5 494.1728 101.5Q493.7376 101.5 493.7376 100.8472Q493.7376 100.1944 494.1728 100.1944Q497.11039999999997 100.1944 499.28639999999996 99.10640000000001Q501.4624 98.0184 503.3664 95.1896Q505.2704 92.3608 507.4464 87.1384L530.1856 32.412000000000006Q530.4032 32.0856 530.8928 32.0856Q531.3824 32.0856 531.4911999999999 32.412000000000006L556.7328 86.59440000000001Q559.2352 92.0344 561.1936000000001 95.0264Q563.152 98.0184 565.1104 99.10640000000001Q567.0688 100.1944 569.4624 100.1944Z"/></g><g fill="none" stroke="#22221F" stroke-width="1.33" stroke-linecap="butt" stroke-linejoin="miter"><path d="M180.00,121.50 L184.42,138.50 L188.84,124.90 L193.26,138.50 L197.68,121.50 M205.24,121.50 L205.24,138.50 M212.79,138.50 L212.79,121.50 L225.03,138.50 L225.03,121.50 M232.59,121.50 L232.59,138.50 M232.59,121.50 L238.37,121.50 M238.37,121.50 C242.45,121.50 244.83,125.24 244.83,130.00 M244.83,130.00 C244.83,134.76 242.45,138.50 238.37,138.50 M238.37,138.50 L232.59,138.50 M260.88,121.50 C265.64,121.50 269.38,125.24 269.38,130.00 M269.38,130.00 C269.38,134.76 265.64,138.50 260.88,138.50 M260.88,138.50 C256.12,138.50 252.38,134.76 252.38,130.00 M252.38,130.00 C252.38,125.24 256.12,121.50 260.88,121.50 M276.94,121.50 L281.36,138.50 L285.78,124.90 L290.20,138.50 L294.62,121.50 M328.77,124.90 C327.75,122.52 326.05,121.50 323.33,121.50 M323.33,121.50 C320.27,121.50 318.23,123.20 318.23,125.92 M318.23,125.92 C318.23,128.30 320.27,129.49 323.33,130.34 M323.33,130.34 C326.73,131.36 328.77,132.38 328.77,134.42 M328.77,134.42 C328.77,137.14 326.39,138.50 323.33,138.50 M323.33,138.50 C320.61,138.50 318.57,137.31 317.89,135.10 M345.16,121.50 C349.92,121.50 353.66,125.24 353.66,130.00 M353.66,130.00 C353.66,134.76 349.92,138.50 345.16,138.50 M345.16,138.50 C340.40,138.50 336.66,134.76 336.66,130.00 M336.66,130.00 C336.66,125.24 340.40,121.50 345.16,121.50 M361.22,121.50 L361.22,138.50 L371.42,138.50 M378.98,121.50 L378.98,131.70 M378.98,131.70 C378.98,135.61 381.70,138.50 385.10,138.50 M385.10,138.50 C388.50,138.50 391.22,135.61 391.22,131.70 M391.22,131.70 L391.22,121.50 M405.23,121.50 L405.23,138.50 M398.77,121.50 L411.69,121.50 M419.25,121.50 L419.25,138.50 M435.30,121.50 C440.06,121.50 443.80,125.24 443.80,130.00 M443.80,130.00 C443.80,134.76 440.06,138.50 435.30,138.50 M435.30,138.50 C430.54,138.50 426.80,134.76 426.80,130.00 M426.80,130.00 C426.80,125.24 430.54,121.50 435.30,121.50 M451.36,138.50 L451.36,121.50 L463.60,138.50 L463.60,121.50 M482.37,124.90 C481.35,122.52 479.65,121.50 476.93,121.50 M476.93,121.50 C473.87,121.50 471.83,123.20 471.83,125.92 M471.83,125.92 C471.83,128.30 473.87,129.49 476.93,130.34 M476.93,130.34 C480.33,131.36 482.37,132.38 482.37,134.42 M482.37,134.42 C482.37,137.14 479.99,138.50 476.93,138.50 M476.93,138.50 C474.21,138.50 472.17,137.31 471.49,135.10"/></g></svg></a>
+    <div class="fot-rader">
+      <div>
+        <p>Windows, doors and sliding walls in solid timber, made to your measurements. Scandinavian craftsmanship, delivered throughout Spain.</p>
+      </div>
+      <div>
+        <h4>Range</h4>
+        <ul>
+          <li><a href="#/products/windows">Windows</a></li>
+          <li><a href="#/products/entrance-doors">Entrance doors</a></li>
+          <li><a href="#/products/terrace-doors">Terrace doors</a></li>
+          <li><a href="#/products/sliding-doors">Sliding doors</a></li>
+          <li><a href="#/products/folding-doors">Folding doors</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="#/wood">The wood</a></li>
+          <li><a href="#/grants">Energy grants</a></li>
+          <li><a href="#/builders">For builders</a></li>
+          <li><a href="#/inspiration">Inspiration</a></li>
+          <li><a href="#/about">About us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Reach us</h4>
+        <address>
+          <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xac5c1b67e67a761:0xe8e461566bfa9ae8" target="_blank" rel="noopener">C. Finlandia 14<br>29670 San Pedro Alcántara<br>Málaga, Spain</a><br><br>
+          <a href="https://wa.me/34622863188" target="_blank" rel="noopener">+34 622 863 188</a><br>
+          <a href="mailto:hello@vyna.es">hello@vyna.es</a><br>
+          <a href="https://www.instagram.com/vyna.windows" target="_blank" rel="noopener">Instagram</a>
+        </address>
+      </div>
+    </div>
+    <div class="fot-slut">
+      <span>© <span id="ar">2026</span> VYNA</span>
+      <span>Made to measure · Delivered throughout Spain</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/34622863188?text=Hi%20VYNA%2C%20I%27d%20like%20a%20quote%20for%20my%20project." target="_blank" rel="noopener" aria-label="Message VYNA on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.53 3.75 1.45 5.3L2 22l4.98-1.6a9.8 9.8 0 0 0 5.06 1.4h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.48 2 12.04 2Zm5.72 13.9c-.24.68-1.4 1.3-1.93 1.34-.5.05-.98.24-3.3-.69-2.79-1.1-4.55-3.95-4.69-4.13-.13-.18-1.12-1.49-1.12-2.84 0-1.35.7-2.01.95-2.29.25-.27.55-.34.73-.34.18 0 .37 0 .53.01.17.01.4-.06.62.48.24.57.8 1.97.87 2.11.07.14.11.31.02.5-.09.18-.13.3-.27.46-.13.16-.28.36-.4.48-.13.14-.27.29-.12.56.15.27.66 1.1 1.42 1.78.98.88 1.8 1.15 2.06 1.28.26.13.4.11.55-.07.15-.18.63-.74.8-1 .17-.25.34-.21.57-.12.23.08 1.47.7 1.72.82.25.13.42.19.48.3.06.1.06.63-.18 1.31Z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"HomeAndConstructionBusiness",
+  "name":"VYNA",
+  "slogan":"window solutions",
+  "description":"Bespoke timber windows, doors and sliding walls made to measure for homes on the Costa del Sol.",
+  "url":"https://vyna.es/",
+  "email":"hello@vyna.es",
+  "telephone":"+34622863188",
+  "image":"https://vyna.es/assets/og.jpg",
+  "logo":"https://vyna.es/assets/vyna-lockup-horisontell-kol.png",
+  "address":{"@type":"PostalAddress","streetAddress":"C. Finlandia 14","addressLocality":"San Pedro Alcántara","addressRegion":"Málaga","postalCode":"29670","addressCountry":"ES"},
+  "areaServed":[
+    {"@type":"City","name":"Marbella"},{"@type":"City","name":"Estepona"},
+    {"@type":"City","name":"Benahavís"},{"@type":"City","name":"San Pedro Alcántara"},
+    {"@type":"AdministrativeArea","name":"Costa del Sol"},
+    {"@type":"Country","name":"Spain"}
+  ],
+  "sameAs":["https://www.instagram.com/vyna.windows"],
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification",
+    "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}]
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var VAGAR = ["/","/products","/products/windows","/products/entrance-doors",
+               "/products/terrace-doors","/products/sliding-doors","/products/folding-doors",
+               "/wood","/grants","/builders","/inspiration","/about","/contact"];
+
+  var TITLAR = {
+    "/":"VYNA — Bespoke timber windows and doors, made to measure in Spain",
+    "/products":"The range — VYNA",
+    "/products/windows":"Windows — VYNA",
+    "/products/entrance-doors":"Entrance doors — VYNA",
+    "/products/terrace-doors":"Terrace doors — VYNA",
+    "/products/sliding-doors":"Sliding doors — VYNA",
+    "/products/folding-doors":"Folding doors — VYNA",
+    "/wood":"The wood we build in — VYNA",
+    "/grants":"Energy grants in Spain — VYNA",
+    "/builders":"For builders and architects — VYNA",
+    "/inspiration":"Inspiration — VYNA",
+    "/about":"About us — VYNA",
+    "/contact":"Contact — VYNA"
+  };
+
+  function vag(){
+    var h = (location.hash || "#/").replace(/^#/,"");
+    if (VAGAR.indexOf(h) === -1) h = "/";
+    document.querySelectorAll(".sida").forEach(function(s){
+      s.classList.toggle("aktiv", s.dataset.sida === h);
+    });
+    document.querySelectorAll(".nav a").forEach(function(a){
+      var r = a.dataset.route;
+      var pa = (r === "/products" && h.indexOf("/products") === 0) || r === h;
+      if (pa) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+    });
+    document.title = TITLAR[h] || TITLAR["/"];
+    document.body.classList.remove("menu-open");
+    document.getElementById("burger").setAttribute("aria-expanded","false");
+    huvud();
+    window.scrollTo(0,0);
+  }
+
+  function huvud(){
+    var hdr = document.getElementById("hdr");
+    var hem = (location.hash === "" || location.hash === "#" || location.hash === "#/");
+    hdr.classList.toggle("solid", !hem || window.scrollY > window.innerHeight * 0.7);
+  }
+
+  window.addEventListener("hashchange", vag);
+  window.addEventListener("scroll", huvud, {passive:true});
+
+  document.getElementById("burger").addEventListener("click", function(){
+    var oppen = document.body.classList.toggle("menu-open");
+    this.setAttribute("aria-expanded", oppen ? "true" : "false");
+  });
+
+  /* Contact form composes a WhatsApp message — no backend, nothing stored */
+  var form = document.getElementById("waform");
+  if (form) {
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var v = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ""; };
+      var text = ["Hi VYNA,","",
+        "Name: " + (v("f-name") || "—"),
+        "Property: " + (v("f-place") || "—"),
+        "Looking for: " + v("f-type"),
+        "", v("f-msg")].join("\n").trim();
+      window.open("https://wa.me/34622863188?text=" + encodeURIComponent(text), "_blank", "noopener");
+    });
+  }
+
+  document.getElementById("ar").textContent = new Date().getFullYear();
+  vag();
+})();
+</script>
+</body>
+</html>

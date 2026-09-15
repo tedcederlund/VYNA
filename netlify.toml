@@ -1,0 +1,24 @@
+# VYNA — vyna.es
+# Statisk sida, inget byggsteg. Netlify publicerar innehållet i public/.
+
+[build]
+  publish = "public"
+  command = ""
+
+# --- säkerhetsrubriker ------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+
+# --- cachning ---------------------------------------------------------------
+# Ett dygn, inte ett år. Filnamnen saknar versionsstämpel, så byter du ut
+# assets/villa.jpg mot ett nytt foto med samma namn vill du att besökarna
+# ser det inom rimlig tid.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
