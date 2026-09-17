@@ -1,0 +1,126 @@
+/* ==========================================================================
+   VYNA — designtokens
+   Färg, typografi, rytm och komponentbas för vyna.es
+   Typsnitt: Cormorant Garamond (rubrik) + Jost (brödtext), båda SIL OFL.
+   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+   ========================================================================== */
+
+:root {
+  /* --- färg: bas ------------------------------------------------------ */
+  --vyna-kol:        #22221F;   /* primär mörk, 60–70 % av ytan i mörka vyer */
+  --vyna-sand:       #F1EFE8;   /* primär ljus */
+  --vyna-kalk:       #FAF8F4;   /* ljusaste yta, kort och paneler */
+  --vyna-sten:       #5F5E5A;   /* sekundär text */
+  --vyna-dis:        #B4B2A9;   /* hårlinjer, avdelare, inaktivt */
+  --vyna-ek:         #7A5A2E;   /* accent på ljus botten (AA, 5,48:1) */
+  --vyna-ek-ljus:    #C99B5E;   /* accent på mörk botten (AA, 6,33:1) */
+
+  /* --- färg: roller --------------------------------------------------- */
+  --bg:              var(--vyna-kalk);
+  --bg-alt:          var(--vyna-sand);
+  --bg-invers:       var(--vyna-kol);
+  --text:            var(--vyna-kol);
+  --text-sekundar:   var(--vyna-sten);
+  --text-invers:     var(--vyna-sand);
+  --linje:           var(--vyna-dis);
+  --accent:          var(--vyna-ek);
+  --accent-invers:   var(--vyna-ek-ljus);
+
+  /* --- typografi ------------------------------------------------------ */
+  --font-rubrik: "Cormorant Garamond", "Cambria", Georgia, serif;
+  --font-text:   "Jost", "Century Gothic", "Helvetica Neue", Arial, sans-serif;
+
+  --sparr-logotyp:  0.30em;   /* endast ordmärket */
+  --sparr-rubrik:   0.06em;
+  --sparr-etikett:  0.24em;   /* versaletiketter, slogan */
+
+  --steg-xs: 0.75rem;   /* 12px  etiketter */
+  --steg-s:  0.875rem;  /* 14px  bildtext */
+  --steg-m:  1rem;      /* 16px  brödtext */
+  --steg-l:  1.375rem;  /* 22px  ingress */
+  --steg-xl: 2.25rem;   /* 36px  underrubrik */
+  --steg-2xl:3.5rem;    /* 56px  rubrik */
+
+  /* --- rytm och form -------------------------------------------------- */
+  --rum-1: 0.5rem;  --rum-2: 1rem;   --rum-3: 1.5rem;
+  --rum-4: 2.5rem;  --rum-5: 4rem;   --rum-6: 6rem;
+  --radie: 2px;                 /* nästan raka hörn — karm, inte app */
+  --harlinje: 1px solid var(--linje);
+  --maxbredd: 1180px;
+}
+
+/* --------------------------------------------------------------- bas --- */
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: var(--steg-m);
+  font-weight: 300;
+  line-height: 1.65;
+}
+h1, h2, h3 {
+  font-family: var(--font-rubrik);
+  font-weight: 300;
+  letter-spacing: var(--sparr-rubrik);
+  line-height: 1.15;
+  margin: 0 0 var(--rum-3);
+}
+h1 { font-size: var(--steg-2xl); }
+h2 { font-size: var(--steg-xl); }
+h3 { font-size: var(--steg-l); }
+p  { margin: 0 0 var(--rum-3); max-width: 68ch; }
+a  { color: var(--accent); text-underline-offset: 0.25em; }
+
+.etikett {
+  font-size: var(--steg-xs);
+  letter-spacing: var(--sparr-etikett);
+  text-transform: uppercase;
+  color: var(--text-sekundar);
+}
+.ingress { font-size: var(--steg-l); color: var(--text-sekundar); }
+
+/* ----------------------------------------------------------- layout --- */
+.sektion { padding: var(--rum-6) var(--rum-4); }
+.omslag  { max-width: var(--maxbredd); margin-inline: auto; }
+.invers  { background: var(--bg-invers); color: var(--text-invers); }
+.invers .etikett, .invers .ingress { color: var(--vyna-dis); }
+.invers a { color: var(--accent-invers); }
+.avdelare { border: 0; border-top: var(--harlinje); margin: var(--rum-5) 0; }
+
+.kort {
+  background: var(--bg-alt);
+  border: var(--harlinje);
+  border-radius: var(--radie);
+  padding: var(--rum-4);
+}
+
+/* ---------------------------------------------------------- knappar --- */
+.knapp {
+  display: inline-block;
+  font-family: var(--font-text);
+  font-size: var(--steg-xs);
+  letter-spacing: var(--sparr-etikett);
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  border: 1px solid var(--text);
+  border-radius: var(--radie);
+  background: var(--text);
+  color: var(--vyna-kalk);
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease;
+}
+.knapp:hover { background: transparent; color: var(--text); }
+.knapp--linje { background: transparent; color: var(--text); }
+.knapp--linje:hover { background: var(--text); color: var(--vyna-kalk); }
+.invers .knapp { background: var(--vyna-sand); color: var(--vyna-kol); border-color: var(--vyna-sand); }
+.invers .knapp:hover { background: transparent; color: var(--vyna-sand); }
+
+/* --------------------------------------------------------- logotyp --- */
+.logotyp { display: block; height: 56px; width: auto; }
+.logotyp--liten { height: 34px; }   /* under 34 px: byt till småformatsmärket */
+
+@media (max-width: 720px) {
+  :root { --steg-2xl: 2.25rem; --steg-xl: 1.625rem; --rum-6: 3.5rem; --rum-4: 1.5rem; }
+}

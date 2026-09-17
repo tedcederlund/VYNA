@@ -1,168 +1,163 @@
 # VYNA — repo och driftsättning
 
-Statisk sida. Inget byggsteg, inga beroenden, ingen server.
+Sidan är sedan september 2026 en riktig flersidesstruktur — varje sida har
+sin egen adress, egen titel och egen sökbeskrivning. Ingen JavaScript-routing
+längre. Fortfarande inget byggsteg: allt i `public/` är exakt det som
+publiceras.
 
 ```
-netlify.toml        ← Netlifys inställningar, läses automatiskt
-.gitignore
-DEPLOY.md           ← den här filen
-public/             ← allt som publiceras
-  index.html            hela sidan, alla fyra vyer
+netlify.toml
+DEPLOY.md               ← den här filen
+public/
+  index.html                              vyna.es/
+  products/index.html                     vyna.es/products/
+  products/windows/index.html             vyna.es/products/windows/
+  products/entrance-doors/index.html      vyna.es/products/entrance-doors/
+  products/terrace-doors/index.html       vyna.es/products/terrace-doors/
+  products/sliding-doors/index.html       vyna.es/products/sliding-doors/
+  products/folding-doors/index.html       vyna.es/products/folding-doors/
+  wood/index.html                         vyna.es/wood/
+  grants/index.html                       vyna.es/grants/
+  builders/index.html                     vyna.es/builders/
+  inspiration/index.html                  vyna.es/inspiration/
+  about/index.html                        vyna.es/about/
+  contact/index.html                      vyna.es/contact/
+  es/                                      samma tretton sidor på spanska,
+                                            under vyna.es/es/...
+  assets/
+    style.css        ← all design, en fil, delad av alla 26 sidor
+    script.js         ← burger-meny, kontaktformulär, header-skugga vid scroll
+    photos/           ← alla fotografier
+    vyna-*.svg/.png    ← logotyper, favikoner
   robots.txt
-  sitemap.xml
-  assets/               logotyper, favikoner, delningsbild, tokens
+  sitemap.xml          ← alla 26 adresser, med hreflang mellan språken
 ```
 
-Bara `public/` hamnar på vyna.es. Den här filen och `netlify.toml` ligger i
-repot men publiceras aldrig — det är därför strukturen ser ut så här.
+Netlify pekas fortfarande mot `public` via `netlify.toml`. Inget byggkommando,
+inga ändringar där.
+
+---
+
+## Vad som ändrades och varför
+
+Fram till nu var hela sajten **en enda fil** — `index.html` — där menyn bytte
+innehåll med JavaScript (adresser som `vyna.es/#/products`). Det fungerade
+fint för besökare, men **Google indexerade bara en sida**, eftersom allt
+efter `#`-tecknet är osynligt för sökmotorer. Elva av tretton sidor existerade
+alltså inte ur sökmotorns perspektiv, oavsett hur bra texten var.
+
+Nu har varje sida en riktig adress, en egen `<title>`, en egen
+sökbeskrivning och en egen post i sitemap.xml. Det är förutsättningen för
+att till exempel produktsidan om skjutdörrar ska kunna ranka på "puertas
+correderas de madera" utan att konkurrera med startsidan om samma sökord.
+
+CSS och JavaScript ligger nu i egna filer (`assets/style.css`,
+`assets/script.js`) i stället för att upprepas i varje sida. Webbläsaren
+laddar dem en gång och återanvänder dem på alla 26 sidor — snabbare för
+besökaren, och enklare att ändra en detalj på ett ställe i stället för
+tjugosex.
 
 ---
 
 ## 1. Lägg upp repot
 
+Samma som tidigare — bara innehållet i `public/` har ändrats.
+
 ```bash
 cd sokvag/till/mappen
 git init
 git add .
-git commit -m "VYNA website, first version"
+git commit -m "VYNA website — real URLs per page"
 git branch -M main
-git remote add origin git@github.com:DITT-KONTO/vyna-web.git
-git push -u origin main
+git remote add origin git@github.com:tedcederlund/VYNA.git
+git push -u origin main -f
 ```
 
-Skapa repot tomt på GitHub först — utan README, .gitignore eller licens,
-annars krockar historiken vid första push.
+`-f` skriver över den gamla hash-baserade versionen. Ladda upp **hela**
+`public`-mappen, inklusive alla undermappar (`products/`, `es/`, `assets/`)
+— inte bara filerna direkt i roten.
 
-Privat eller publikt spelar ingen roll tekniskt. Privat är rimligare för
-ett företag som inte publicerat sig än.
-
----
-
-## 2. Koppla repot till Netlify
-
-1. **Add new site → Import an existing project**
-2. Välj GitHub och auktorisera om det behövs
-3. Peka ut `vyna-web`
-4. Netlify läser `netlify.toml` och fyller i publiceringsmappen `public`
-   automatiskt. Låt byggkommandot vara tomt
-5. **Deploy**
-
-Klart. Varje `git push` till `main` bygger om sidan inom någon minut.
-
-### Det du får på köpet
-
-**Deploy previews.** Pusha en branch och Netlify bygger en egen URL för
-just den. Vill du visa Johan två varianter av startsidan behöver du inte
-röra den publika sidan.
-
-```bash
-git checkout -b ny-startsida
-# ändra
-git push -u origin ny-startsida
-```
-
-**Rollback.** Under **Deploys** ligger varje tidigare version kvar.
-Ett klick på *Publish deploy* återställer. Du behöver aldrig fumla i Git
-när något ser fel ut i skarpt läge.
+**Viktigt om GitHubs webbgränssnitt:** dra in mappstrukturen medan du står
+inne i rätt katalog på GitHub, precis som tidigare. Kontrollera efteråt att
+till exempel `public/products/windows/index.html` faktiskt syns i trädet på
+just den platsen — det är den vanligaste felkällan.
 
 ---
 
-## 3. Koppla vyna.es
+## 2. Netlify
 
-Två vägar. Välj en.
+Ingen ny konfiguration behövs. Netlify serverar `mapp/index.html` automatiskt
+som `/mapp/` — det är standardbeteende för statiska sajter, inga
+omdirigeringsregler krävs. Om sajten redan är kopplad till repot bygger den
+om automatiskt vid nästa push.
 
-### Väg A — låt Netlify sköta DNS
+Kontrollera efter driftsättning:
 
-1. **Domain management → Add a domain** → `vyna.es`
-2. Välj **Netlify DNS**. Du får fyra namnservrar, typ `dns1.p03.nsone.net`
-3. Hos registraren där du köpte vyna.es: byt ut namnservrarna mot Netlifys
-4. Spara
-
-Har du redan mail på domänen måste MX-posterna läggas in i Netlify DNS
-också, annars slutar mailen fungera samma stund som bytet slår igenom.
-
-### Väg B — behåll DNS hos registraren
-
-| Typ | Namn | Värde |
-|---|---|---|
-| A | `@` (eller tomt) | `75.2.60.5` |
-| CNAME | `www` | `ditt-sajtnamn.netlify.app` |
-
-`75.2.60.5` är Netlifys lastbalanserare för apex-domäner. Stöder din
-registrar ALIAS eller ANAME är de bättre än A-posten — peka dem mot
-`ditt-sajtnamn.netlify.app` i stället.
-
-Lägg sedan till `vyna.es` under **Domain management** så att certifikatet
-utfärdas.
-
-### Sedan, oavsett väg
-
-- `.es` propagerar ofta långsammare än `.com`. Räkna med ett dygn, ibland två
-- Kontrollera att **HTTPS-certifikatet** utfärdats. Det sker automatiskt,
-  men först när DNS pekar rätt
-- Sätt `https://vyna.es` som primär domän så att www omdirigeras dit
+- `vyna.es/products/windows/` laddar med egen titel i webbläsarfliken
+- `vyna.es/es/products/windows/` visar spanska, och EN/ES-växlaren tar dig
+  till **samma sida** på andra språket, inte till startsidan
+- Menyn visar rätt markerad sida (understruken/highlightad) på varje undersida
+- Footer-länkarna fungerar
+- WhatsApp-knappen och kontaktformuläret fungerar som förut
 
 ---
 
-## 4. Sätt upp hello@vyna.es
+## 3. Google Search Console
 
-Mailen på sidan är död tills det här är gjort. Netlify hanterar inte mail.
+Eftersom adresserna är nya räknas de som nya sidor för Google, även om
+innehållet är detsamma som förut. Gör detta så snart sajten är live:
 
-Zoho Mail har en gratisnivå för en domän. Google Workspace kostar men
-integrerar bättre om ni redan kör Google.
+1. Logga in på [Google Search Console](https://search.google.com/search-console)
+2. Skicka in `https://vyna.es/sitemap.xml` på nytt under **Sitemaps**
+3. Under **URL Inspection**, be om indexering av `vyna.es/` och några av de
+   viktigaste undersidorna (`/products/`, `/grants/`) för att skynda på
+4. Räkna med några dagar till ett par veckor innan Google hunnit besöka och
+   indexera alla 26 sidor
 
-1. Skapa konto, lägg till `vyna.es`
-2. Du får MX-poster, en SPF-post (TXT) och oftast DKIM
-3. Lägg in dem där DNS ligger — Netlify DNS eller registraren
-4. Testa genom att mejla dig själv från ett annat konto
-
-Vill du inte lösa mail nu: ta bort de två raderna med `hello@vyna.es` ur
-`public/index.html`. En kontaktväg som studsar är sämre än ingen.
-
----
-
-## 5. Kontrollera efter publicering
-
-- Skicka `https://vyna.es` till dig själv i WhatsApp. Delningsbilden ska visas
-- Klicka WhatsApp-knappen från en telefon, kontrollera numret
-- Fyll i formuläret och skicka — det ska öppna WhatsApp med texten ifylld
-- **Google Search Console**: lägg till sajten, skicka in
-  `https://vyna.es/sitemap.xml`
-- **Google Business Profile** för adressen i San Pedro. Sidan har redan
-  strukturerad data för lokal sökning, men den kopplas till en företagsprofil
-  för att ge full effekt
+Har ni redan skickat in den gamla sitemap.xml (med bara två adresser) tidigare
+gör det ingenting — den nya filen ersätter den automatiskt.
 
 ---
 
-## 6. Byta ut bilderna
+## 4. Byta ut bilderna
 
-Varje bildplats är en `<figure>`. Lägg fotot i `public/assets/` och ändra:
+Samma som tidigare. Varje bildplats är en `<figure>`:
 
 ```html
-<figure class="bild r-45 tom">                              <!-- före -->
-<figure class="bild r-45" data-src="assets/villa.jpg" data-alt="Ekfönster">
+<figure class="bild r-45"><img src="/assets/photos/villa.jpg" alt="Ekfönster" loading="lazy"></figure>
 ```
 
-Ta bort `tom` och raden `<p class="lapp">…</p>` inuti. Formatklassen
-(`r-45`, `r-32`, `r-169`) styr proportionen, så beskärningen blir rätt
-oavsett bildens mått.
+Lägg fotot i `public/assets/photos/`, referera det med `/assets/photos/…`
+(notera det inledande snedstrecket — alla sökvägar är nu rotbaserade och
+fungerar likadant oavsett hur djupt sidan ligger i mappstrukturen).
 
-Sedan:
+---
 
-```bash
-git add .
-git commit -m "Riktiga projektfoton"
-git push
+## 5. Ändra text på en specifik sida
+
+Varje sida är nu sin egen fil. Vill du ändra något på skjutdörrssidan, öppna
+`public/products/sliding-doors/index.html` (eller
+`public/es/products/sliding-doors/index.html` för spanskan) — inte
+`index.html` i roten, som bara är startsidan.
+
+**Sidtitel och sökbeskrivning** ligger högst upp i varje fil:
+
+```html
+<title>Timber Sliding Doors | VYNA</title>
+<meta name="description" content="…">
 ```
+
+Ändrar du dessa, uppdatera **inte** `og:title`/`og:description` för hand —
+de bör spegla samma text (det finns ingen automatisk synk längre eftersom
+varje sida är en fristående fil).
 
 ---
 
 ## Kvar att bestämma
 
-- Instagram-handtaget `@vyna.windows` är påhittat. Byt eller ta bort
-- Projektnamnen på Inspiration-sidan är fyllnadstext
-- Specifikationerna (0,8 W/m²K, EN 14351-1, 400 kg) behöver verifieras mot
-  vad era faktiska leverantörer levererar
-- Typsnitten hämtas från Google Fonts, vilket skickar besökarens IP-adress
-  till Google. Båda är fria under SIL OFL och kan läggas lokalt i `assets/`
-- Varumärkeskontroll i EUIPO och OEPM före publicering, inte efter
+- Instagram-handtaget, kontaktmailen och bilderna på produktsidorna — samma
+  öppna punkter som tidigare, opåverkade av den här omläggningen
+- Varumärkeskontroll i EUIPO och OEPM
+- När produktbilder finns på riktiga VYNA-leveranser: byt ut Pexels-bilderna
+  på produktsidorna, eftersom det är de bilderna en kund tror föreställer
+  era egna fönster
