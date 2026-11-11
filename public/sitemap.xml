@@ -209,4 +209,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://vyna.es/partners/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vyna.es/partners/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vyna.es/es/partners/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vyna.es/partners/"/>
+    <changefreq>monthly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vyna.es/es/partners/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vyna.es/partners/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vyna.es/es/partners/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vyna.es/partners/"/>
+    <changefreq>monthly</changefreq><priority>0.7</priority>
+  </url>
 </urlset>
