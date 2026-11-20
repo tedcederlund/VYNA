@@ -260,4 +260,4 @@ figcaption{margin-top:var(--rum-2);font-size:var(--steg-s);color:var(--text-seku
 .r-34{aspect-ratio:3/4}
 .par{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.75rem,1.6vw,1.25rem);margin-top:var(--rum-4)}
 @media (max-width:600px){.par{grid-template-columns:1fr}}
-.par--liten{margin-top:0;grid-template-columns:1fr 1fr!important;max-width:520px;justify-self:end;width:100%}
+.par--liten{margin-top:0;gap:clamp(1.25rem,2.5vw,2rem)!important;grid-template-columns:1fr 1fr!important;max-width:520px;justify-self:end;width:100%}
